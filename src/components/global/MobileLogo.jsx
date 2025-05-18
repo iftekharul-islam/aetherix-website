@@ -1,14 +1,14 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import logo from '../../assets/logo.png';
 const MobileLogo = () => {
     return (
         <Link href='/'>
             <Image
-                src='/assets/images/Logo tsports.svg'
+                src={logo}
                 alt='Brand'
-                className='w-[120px] h-auto'
-                width={120}
-                height={50}
+                className='w-[40px] h-auto'
+                width={40}
             />
         </Link>
     );
