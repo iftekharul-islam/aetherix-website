@@ -1,14 +1,15 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import logo from '../../assets/logo.png';
 const Logo = () => {
     return (
         <Link href='/'>
             <Image
-                src='/assets/images/Logo tsports.svg'
+                src={logo}
                 alt='Brand'
-                className='w-[160px] h-auto'
-                width={170}
-                height={60}
+                className='w-[50px] h-auto ms-10'
+                width={50}
+                height={50}
             />
         </Link>
     );
