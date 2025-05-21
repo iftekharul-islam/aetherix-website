@@ -7,7 +7,7 @@ const Logo = () => {
             <Image
                 src={logo}
                 alt='Brand'
-                className='w-[50px] h-auto ms-10'
+                className='w-[50px] h-auto'
                 width={50}
                 height={50}
             />

@@ -70,8 +70,8 @@ const Navbar = ({ isHomePage }) => {
                     isScrolled ? 'py-[10px]' : 'py-[12px] md:py-[30px]'
                 }`}
             >
-                <div className='flex items-center justify-between h-16 mx-1 md:mx-0'>
-                    <div className='hidden md:flex'>
+                <div className='flex items-center justify-between h-16 '>
+                    <div className='hidden md:flex justify-start'>
                         <Logo />
                     </div>
                     <div className='md:hidden'>
