@@ -83,9 +83,6 @@ const Navbar = ({ isHomePage }) => {
                         <Link href='/' className={`${isActive('/')} px-3 py-2 uppercase`}>
                             Home
                         </Link>
-                        <Link href='/about' className={`${isActive('/about')} px-3 py-2 uppercase`}>
-                            About
-                        </Link>
                         <Link
                             href='/services'
                             className={`${isActive('/services')} px-3 py-2 uppercase`}
@@ -94,6 +91,9 @@ const Navbar = ({ isHomePage }) => {
                         </Link>
                         <Link href='/blogs' className={`${isActive('/blog')} px-3 py-2 uppercase`}>
                             Blog
+                        </Link>
+                        <Link href='/about' className={`${isActive('/about')} px-3 py-2 uppercase`}>
+                            About
                         </Link>
                         <Link
                             href='/contact'
@@ -133,13 +133,6 @@ const Navbar = ({ isHomePage }) => {
                             onClick={() => setIsMenuOpen(false)}
                         >
                             Home
-                        </Link>
-                        <Link
-                            href='/about'
-                            className='block px-4 py-2 hover:bg-gray-100'
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            About
                         </Link>
                         <div className='px-4 py-2'>
                             <button
@@ -185,6 +178,13 @@ const Navbar = ({ isHomePage }) => {
                             onClick={() => setIsMenuOpen(false)}
                         >
                             Blog
+                        </Link>
+                        <Link
+                            href='/about'
+                            className='block px-4 py-2 hover:bg-gray-100'
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            About
                         </Link>
                         <Link
                             href='/contact'
