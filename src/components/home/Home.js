@@ -1,7 +1,34 @@
+'use client';
+import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import DemoImage from '../../assets/demoimage.jpeg';
+
+const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            type: 'spring',
+            damping: 18,
+            stiffness: 100,
+            ease: 'easeOut',
+            duration: 0.8,
+        },
+    },
+};
+
+const stagger = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.25,
+            delayChildren: 0.1,
+        },
+    },
+};
 const Home = () => {
     const tiles = [
         {
@@ -45,33 +72,54 @@ const Home = () => {
             <section className='bg-gradient-to-br from-[#002a57] to-[#0097b2]'>
                 <div className='container mx-auto px-4 min-h-screen flex flex-col lg:flex-row justify-between items-center text-white relative overflow-hidden py-16'>
                     {/* Left Side */}
-                    <div className='max-w-xl space-y-6 z-10 text-center lg:text-left mb-10 lg:mb-0'>
-                        <div className='hidden md:flex items-center gap-2 justify-center lg:justify-start'>
+                    <motion.div
+                        className='max-w-xl space-y-6 z-10 text-center lg:text-left mb-10 lg:mb-0'
+                        variants={stagger}
+                        initial='hidden'
+                        whileInView='visible'
+                        viewport={{ once: true, amount: 0.5 }}
+                    >
+                        <motion.div
+                            className='hidden md:flex items-center gap-2 justify-center lg:justify-start'
+                            variants={fadeInUp}
+                        >
                             <div className='h-0.5 w-8 bg-[#d1d5db] rounded-full'></div>
                             <div className='text-sm text-[#d1d5db] font-bold'>
                                 Expert Consulting
                             </div>
                             <div className='h-0.5 w-8 bg-[#d1d5db] rounded-full'></div>
-                        </div>
-                        <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold leading-tight'>
+                        </motion.div>
+
+                        <motion.h1
+                            className='text-3xl sm:text-4xl md:text-5xl font-bold leading-tight'
+                            variants={fadeInUp}
+                        >
                             Reliably Guiding Your <br />
                             <span className='bg-[#00e0d0] rounded-xl px-2 py-1 inline-block mt-2'>
                                 Business
                             </span>{' '}
                             to Success
-                        </h1>
-                        <p className='text-sm sm:text-base text-white/80'>
+                        </motion.h1>
+
+                        <motion.p
+                            className='text-sm sm:text-base text-white/80'
+                            variants={fadeInUp}
+                        >
                             Our highly qualified global team is uniquely qualified to deliver
                             high-performance sustainable landmark buildings through our integrated
                             suite.
-                        </p>
-                        <div className='flex justify-center lg:justify-start'>
+                        </motion.p>
+
+                        <motion.div
+                            className='flex justify-center lg:justify-start'
+                            variants={fadeInUp}
+                        >
                             <button className='bg-white text-[#002a57] px-6 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-gray-100 transition-colors'>
                                 Contact Us
                                 <FontAwesomeIcon icon={faArrowRight} className='w-4 h-4' />
                             </button>
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
 
                     {/* Right Side */}
                     <div className='relative space-y-4 z-10 text-center'>
