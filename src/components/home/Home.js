@@ -205,7 +205,7 @@ const Home = () => {
                                         </p>
                                     </div>
 
-                                    <div className='p-1 bg-white rounded-full'>
+                                    <div className='px-2 py-0.5 bg-white rounded-full'>
                                         <FontAwesomeIcon
                                             icon={faArrowRight}
                                             className='text-black h-4 w-4'
