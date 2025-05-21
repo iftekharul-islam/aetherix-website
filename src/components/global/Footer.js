@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Footer = () => {
     return (
         <footer>
@@ -26,11 +28,11 @@ const Footer = () => {
                 <div>
                     <h5 className="font-semibold mb-4">Menu</h5>
                     <ul className="space-y-2">
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Services</li>
-                    <li>Blog</li>
-                    <li>Contact Us</li>
+                    <li><Link href="/">Home</Link></li>
+                    <li><Link href="/services">Services</Link></li>
+                    <li><Link href="/blogs">Blog</Link></li>
+                    <li><Link href="/about">About</Link></li>
+                    <li><Link href="/contact">Contact Us</Link></li>
                     </ul>
                 </div>
 
