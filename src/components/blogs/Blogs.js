@@ -3,13 +3,15 @@ import Link from 'next/link';
 const Blogs = () => {
     return (
         <>
-            <section className='bg-gradient-to-br from-[#002a57] to-[#0097b2] text-white px-20 py-20'>
-                <h1 className='text-4xl font-bold mb-2'>Blog</h1>
-                <p className='text-sm text-white/80'>Home / Blog</p>
+            <section className='bg-gradient-to-br from-[#002a57] to-[#0097b2] text-white py-10 md:py-30'>
+                <div className='container'>
+                    <h1 className='text-4xl font-bold mb-2'>Blog</h1>
+                    <p className='text-sm text-white/80'>Home / Blog</p>
+                </div>
             </section>
 
-            <section className='py-20 px-20'>
-                <div className='grid grid-cols-3 gap-6'>
+            <section className='py-20 container'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                     <div className='col-span-1 bg-white rounded-xl shadow p-4'>
                         <img src='https://placehold.co/400x220' className='rounded-lg mb-4' />
                         <h3 className='text-base font-semibold mb-1'>
@@ -62,9 +64,9 @@ const Blogs = () => {
                 </div>
             </section>
 
-            <section className='pb-20 px-20'>
+            <section className='pb-20 container'>
                 <h2 className='text-2xl font-bold mb-10'>Featured Blogs</h2>
-                <div className='grid grid-cols-3 gap-6'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                     <div className='bg-white rounded-xl shadow p-4'>
                         <img src='https://placehold.co/400x200' className='rounded-lg mb-4' />
                         <h3 className='text-base font-semibold mb-1'>
