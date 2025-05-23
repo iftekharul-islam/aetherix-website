@@ -1,17 +1,32 @@
 import React from 'react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 function FeaturesServiceSection() {
+    const items = [
+        'FPS Global',
+        'Featured Projects',
+        'Consulting Services',
+        'Qualified Global Team',
+        'Consulting Services',
+        'Qualified Global Team',
+        'FPS Global',
+        'Qualified Global Team',
+        'Consulting Services',
+        'Qualified Global Team',
+        'FPS Global',
+    ];
+    const repeatedItems = [...items, ...items, ...items]; // Repeat for seamless loop
+
     return (
-        <div className='bg-[#00b3c8]  py-2'>
-            <div className='container text-white text-sm  flex flex-wrap gap-4 justify-center'>
-                <span>FPS Global</span>
-                <span>Featured Projects</span>
-                <span>Consulting Services</span>
-                <span>Qualified Global Team</span>
-                <span>FPS Global</span>
-                <span>Featured Projects</span>
-                <span>Consulting Services</span>
-                <span>Qualified Global Team</span>
+        <div className='bg-[#00b3c8] py-4 overflow-hidden'>
+            <div className='marquee-container'>
+                <div className='marquee-track'>
+                    {[...items, ...items, ...items].map((text, index) => (
+                        <span className='marquee-item' key={index}>
+                            <FontAwesomeIcon icon={faStar} className='w-4 h-4' /> {text}
+                        </span>
+                    ))}
+                </div>
             </div>
         </div>
     );

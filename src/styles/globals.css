@@ -37,3 +37,29 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.marquee-track {
+    display: inline-block;
+    animation: scroll-marquee 30s linear infinite;
+}
+
+.marquee-item {
+    display: inline-block;
+    margin: 0 2rem;
+    color: white;
+    font-size: 0.875rem;
+}
+
+@keyframes scroll-marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
