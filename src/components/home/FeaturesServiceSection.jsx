@@ -18,11 +18,11 @@ function FeaturesServiceSection() {
     const repeatedItems = [...items, ...items, ...items]; // Repeat for seamless loop
 
     return (
-        <div className='bg-[#00b3c8] py-4 overflow-hidden'>
+        <div className='bg-[#00b3c8] py-8 overflow-hidden'>
             <div className='marquee-container'>
                 <div className='marquee-track'>
                     {[...items, ...items, ...items].map((text, index) => (
-                        <span className='marquee-item' key={index}>
+                        <span className='marquee-item text-white text-lg font-bold' key={index}>
                             <FontAwesomeIcon icon={faStar} className='w-4 h-4' /> {text}
                         </span>
                     ))}

@@ -12,10 +12,11 @@ const Home = () => {
             <HeroSection />
             <OfferSection />
             <FeaturesServiceSection />
-            <GlobalSection />
+            <ClientSection />
+         {/*    <GlobalSection /> */}
             <CustomerFeedbackSection />
             <LatestNewsSection />
-            <ClientSection />
+            
         </>
     );
 };
