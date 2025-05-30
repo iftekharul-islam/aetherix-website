@@ -108,6 +108,24 @@ body {
 .flip-card.rotate-y-180 {
     transform: rotateY(180deg);
 }
+/* styles/globals.css */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #4f46e5 #1e293b;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #4f46e5;
+    border-radius: 20px;
+}
 /* end portfolio FlipCard Section start */
 @keyframes scroll-marquee {
     0% {
