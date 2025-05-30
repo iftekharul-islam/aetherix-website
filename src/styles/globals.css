@@ -37,6 +37,25 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+ @keyframes gradient-diagonal-herosection {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.animated-gradient-diagonal-herosection {
+  background: linear-gradient(135deg, #002a57, #0097b2); /* to-br */
+  background-size: 300% 300%;
+  animation: gradient-diagonal-herosection 8s ease infinite;
+}
+
 .marquee-container {
     overflow: hidden;
     white-space: nowrap;

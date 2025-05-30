@@ -31,7 +31,7 @@ const stagger = {
 };
 function HeroSection() {
     return (
-        <section className='bg-gradient-to-br from-[#002a57] to-[#0097b2]'>
+        <section className='animated-gradient-diagonal-herosection'>
             <div className='container mx-auto px-4 min-h-screen flex flex-col lg:flex-row justify-between items-center text-white relative overflow-hidden py-16'>
                 {/* Left Side */}
                 <motion.div

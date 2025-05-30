@@ -60,14 +60,14 @@ const Navbar = ({ isHomePage }) => {
             className={`transition-all duration-300 ease-in-out w-full sticky md:fixed top-0 z-[999] ${
                 isHomePage
                     ? isScrolled
-                        ? 'bg-gradient-to-r from-[#002a57] to-[#0097b2] shadow-md text-white'
+                        ? 'animated-gradient-diagonal-herosection shadow-md text-white'
                         : 'bg-transparent '
                     : 'bg-[#002a57] shadow-md text-white'
             }`}
         >
             <div
                 className={`transition-all duration-300 ease-in-out container ${
-                    isScrolled ? 'py-[10px]' : 'py-[12px] md:py-[30px]'
+                    isScrolled ? 'py-[10px] ' : 'py-[10px] '
                 }`}
             >
                 <div className='flex items-center justify-between h-16 '>
