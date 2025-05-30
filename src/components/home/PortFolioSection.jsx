@@ -1,11 +1,15 @@
 'use client';
 import { useState } from 'react';
 import FlipCard from './FlipCard';
-import DemoImage from '../../assets/demoimage.jpeg';
+import DemoImage from '@/assets/demoimage.jpeg';
+import Roketbus from '@/assets/roketbus.svg';
+import Shopify from '@/assets/shopify.png';
+import Uplify from '@/assets/uplify.png';
+import SamrtFactory from '@/assets/smartFactory.png';
 const portfolioData = {
     portfolioProjects: [
         {
-            imageSrc: DemoImage,
+            imageSrc: Roketbus,
             title: 'RoketBus',
             subtitle: 'Project Management SaaS',
             backContent:
@@ -15,7 +19,7 @@ const portfolioData = {
             year: 2023,
         },
         {
-            imageSrc: DemoImage,
+            imageSrc: Shopify,
             title: 'Shopify',
             subtitle: 'E-commerce Platform',
             backContent:
@@ -25,7 +29,7 @@ const portfolioData = {
             year: 2022,
         },
         {
-            imageSrc: DemoImage,
+            imageSrc: Uplify,
             title: 'UplifyHealth',
             subtitle: 'Healthcare Management System',
             backContent:
@@ -35,7 +39,7 @@ const portfolioData = {
             year: 2023,
         },
         {
-            imageSrc: DemoImage,
+            imageSrc: SamrtFactory,
             title: 'SmartFactory',
             subtitle: 'Industrial IoT Solution',
             backContent:
