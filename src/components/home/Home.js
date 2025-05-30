@@ -5,6 +5,7 @@ import GlobalSection from './GlobalSection';
 import CustomerFeedbackSection from './CustomerFeedbackSection';
 import LatestNewsSection from './LatestNewsSection';
 import ClientSection from './ClientSection';
+import PortFolioSection from './PortFolioSection';
 
 const Home = () => {
     return (
@@ -12,11 +13,11 @@ const Home = () => {
             <HeroSection />
             <OfferSection />
             <FeaturesServiceSection />
+            <PortFolioSection />
             <ClientSection />
-         {/*    <GlobalSection /> */}
+            {/*    <GlobalSection /> */}
             <CustomerFeedbackSection />
             <LatestNewsSection />
-            
         </>
     );
 };
