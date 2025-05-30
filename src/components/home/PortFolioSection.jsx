@@ -60,7 +60,9 @@ export default function HomePage() {
                 return (
                     <>
                         <div className=''>
-                            <h1 className='text-3xl font-bold text-center mb-10'>Tab1 Title</h1>
+                            {/*   <div className='text-3xl font-bold text-center mb-10'>
+                                Web Application Development
+                            </div> */}
                             <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                                 {portfolioData.portfolioProjects.map((project, idx) => (
                                     <FlipCard
@@ -69,9 +71,9 @@ export default function HomePage() {
                                         title={project.title}
                                         subtitle={project.subtitle}
                                         backContent={project.backContent}
-                                        client={project.client} // Pass client name
-                                        year={project.year} // Pass year
-                                        technologies={project.technologies} // Pass technologies array
+                                        client={project.client}
+                                        year={project.year}
+                                        technologies={project.technologies}
                                         href={`/portfolio/${project.title
                                             .toLowerCase()
                                             .replace(/\s+/g, '-')}`}
@@ -85,15 +87,23 @@ export default function HomePage() {
                 return (
                     <>
                         <div className=''>
-                            <h1 className='text-3xl font-bold text-center mb-10'>Tab2 Title</h1>
-                            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto'>
-                                {cardsData.map((card, idx) => (
+                            {/*  <div className='text-3xl font-bold text-center mb-10'>
+                                Mobile Application Development
+                            </div> */}
+                            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                                {portfolioData.portfolioProjects.map((project, idx) => (
                                     <FlipCard
                                         key={idx}
-                                        imageSrc={card.imageSrc}
-                                        title={card.title}
-                                        subtitle={card.subtitle}
-                                        backContent={card.backContent}
+                                        imageSrc={project.imageSrc}
+                                        title={project.title}
+                                        subtitle={project.subtitle}
+                                        backContent={project.backContent}
+                                        client={project.client}
+                                        year={project.year}
+                                        technologies={project.technologies}
+                                        href={`/portfolio/${project.title
+                                            .toLowerCase()
+                                            .replace(/\s+/g, '-')}`}
                                     />
                                 ))}
                             </div>
@@ -104,15 +114,21 @@ export default function HomePage() {
                 return (
                     <>
                         <div className=''>
-                            <h1 className='text-3xl font-bold text-center mb-10'>Tab3 Title</h1>
-                            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto'>
-                                {cardsData.map((card, idx) => (
+                            {/*  <div className='text-3xl font-bold text-center mb-10'>UI/UX Design</div> */}
+                            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                                {portfolioData.portfolioProjects.map((project, idx) => (
                                     <FlipCard
                                         key={idx}
-                                        imageSrc={card.imageSrc}
-                                        title={card.title}
-                                        subtitle={card.subtitle}
-                                        backContent={card.backContent}
+                                        imageSrc={project.imageSrc}
+                                        title={project.title}
+                                        subtitle={project.subtitle}
+                                        backContent={project.backContent}
+                                        client={project.client}
+                                        year={project.year}
+                                        technologies={project.technologies}
+                                        href={`/portfolio/${project.title
+                                            .toLowerCase()
+                                            .replace(/\s+/g, '-')}`}
                                     />
                                 ))}
                             </div>
@@ -126,7 +142,23 @@ export default function HomePage() {
 
     return (
         <div className='container py-12'>
-            <div className='flex justify-center text-lg py-4 font-semibold'>Our Portfolio</div>
+            <div className='flex justify-center items-center flex-col flex-wrap gap-4 pb-6'>
+                <div className='px-3 py-1 bg-secondary/75 rounded-full text-white text-sm font-light'>
+                    Our Portfolio
+                </div>
+
+                <div className='text-4xl font-bold flex flex-col items-center gap-0'>
+                    <div className='text-black'>Transformative Solutions</div>
+                    <div className='text-secondary'>That Drive Impact</div>
+                </div>
+
+                <div className='text-center text-gray-600 text-lg max-w-2xl'>
+                    Explore our portfolio of cutting-edge software solutions that have helped
+                    businesses increase efficiency by 40%, boost revenue by 35%, and enhance
+                    customer satisfaction. Each project represents our commitment to innovation and
+                    measurable results.
+                </div>
+            </div>
             <div className='flex space-x-4 justify-center items-center'>
                 <button
                     onClick={() => setActiveTab('Tab1')}
@@ -137,7 +169,7 @@ export default function HomePage() {
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
                 >
-                    Tab1
+                    Web Development
                 </button>
                 <button
                     onClick={() => setActiveTab('Tab2')}
@@ -148,7 +180,7 @@ export default function HomePage() {
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
                 >
-                    Tab2
+                    Mobile Development
                 </button>
                 <button
                     onClick={() => setActiveTab('Tab3')}
@@ -159,13 +191,11 @@ export default function HomePage() {
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
                 >
-                    Tab3
+                    UI/UX Design
                 </button>
             </div>
 
-            <div className='mt-6 p-4 bg-white border border-gray-200 rounded-md shadow'>
-                {renderTabContent()}
-            </div>
+            <div className='py-12'>{renderTabContent()}</div>
         </div>
     );
 }
