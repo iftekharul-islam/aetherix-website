@@ -6,6 +6,7 @@ import CustomerFeedbackSection from './CustomerFeedbackSection';
 import LatestNewsSection from './LatestNewsSection';
 import ClientSection from './ClientSection';
 import PortFolioSection from './PortFolioSection';
+import ServiceSection from './ServiceSection';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <OfferSection />
             <FeaturesServiceSection />
             <PortFolioSection />
+            <ServiceSection/>
             <ClientSection />
             {/*    <GlobalSection /> */}
             <CustomerFeedbackSection />

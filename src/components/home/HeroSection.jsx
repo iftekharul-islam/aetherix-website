@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import DemoImage from '../../assets/demoimage.jpeg';
+import DemoImage from '@/assets/demoimage.jpeg';
 import Image from 'next/image';
 const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
