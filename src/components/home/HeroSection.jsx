@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import DemoImage from '../../assets/demoimage.jpeg';
+import DemoImage from '@/assets/demoimage.jpeg';
 import Image from 'next/image';
 const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -31,7 +31,7 @@ const stagger = {
 };
 function HeroSection() {
     return (
-        <section className='bg-gradient-to-br from-[#002a57] to-[#0097b2]'>
+        <section className='animated-gradient-diagonal-herosection'>
             <div className='container mx-auto px-4 min-h-screen flex flex-col lg:flex-row justify-between items-center text-white relative overflow-hidden py-16'>
                 {/* Left Side */}
                 <motion.div

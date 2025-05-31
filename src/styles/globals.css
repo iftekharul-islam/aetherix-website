@@ -6,7 +6,7 @@
     --background: #ffffff;
     --foreground: #171717;
     --primary: #1e3a8a;
-    --secondary: #f59e0b;
+    --secondary: #0097b2;
 }
 
 @theme inline {
@@ -37,6 +37,25 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+@keyframes gradient-diagonal-herosection {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.animated-gradient-diagonal-herosection {
+    background: linear-gradient(135deg, #002a57, #0097b2); /* to-br */
+    background-size: 300% 300%;
+    animation: gradient-diagonal-herosection 8s ease infinite;
+}
+
 .marquee-container {
     overflow: hidden;
     white-space: nowrap;
@@ -88,6 +107,24 @@ body {
 
 .flip-card.rotate-y-180 {
     transform: rotateY(180deg);
+}
+/* styles/globals.css */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #4f46e5 #1e293b;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #4f46e5;
+    border-radius: 20px;
 }
 /* end portfolio FlipCard Section start */
 @keyframes scroll-marquee {

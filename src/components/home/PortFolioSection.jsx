@@ -1,37 +1,55 @@
 'use client';
 import { useState } from 'react';
 import FlipCard from './FlipCard';
-import DemoImage from '../../assets/demoimage.jpeg';
-const cardsData = [
-    {
-        imageSrc: DemoImage,
-        title: 'PortFolio 1',
-        subtitle: 'PortFolio 1 Subtitle',
-        backContent:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    },
-    {
-        imageSrc: DemoImage,
-        title: 'PortFolio 2',
-        subtitle: 'PortFolio 2 Subtitle',
-        backContent:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    },
-    {
-        imageSrc: DemoImage,
-        title: 'PortFolio 3',
-        subtitle: 'PortFolio 3 Subtitle',
-        backContent:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    },
-    {
-        imageSrc: DemoImage,
-        title: 'PortFolio 4',
-        subtitle: 'PortFolio 4 Subtitle',
-        backContent:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    },
-];
+import DemoImage from '@/assets/demoimage.jpeg';
+import Roketbus from '@/assets/roketbus.svg';
+import Shopify from '@/assets/shopify.png';
+import Uplify from '@/assets/uplify.png';
+import SamrtFactory from '@/assets/smartFactory.png';
+const portfolioData = {
+    portfolioProjects: [
+        {
+            imageSrc: Roketbus,
+            title: 'RoketBus',
+            subtitle: 'Project Management SaaS',
+            backContent:
+                'A comprehensive project management solution with agile workflows, time tracking, and team collaboration features. Built with React, Node.js, and MongoDB. Helped clients improve team productivity by 35%.',
+            technologies: ['React', 'Node.js', 'MongoDB', 'AWS'],
+            client: 'Various SMEs',
+            year: 2023,
+        },
+        {
+            imageSrc: Shopify,
+            title: 'Shopify',
+            subtitle: 'E-commerce Platform',
+            backContent:
+                'Custom e-commerce solution with AI-powered recommendations, multi-vendor support, and seamless payment integration. Processed over $2M in transactions in first 6 months.',
+            technologies: ['Vue.js', 'Laravel', 'PostgreSQL', 'Redis'],
+            client: 'Retail Group Inc.',
+            year: 2022,
+        },
+        {
+            imageSrc: Uplify,
+            title: 'UplifyHealth',
+            subtitle: 'Healthcare Management System',
+            backContent:
+                'HIPAA-compliant patient management system with telemedicine capabilities, prescription tracking, and IoT device integration. Reduced administrative workload by 40% for healthcare providers.HIPAA-compliant patient management system with telemedicine capabilities, prescription tracking, and IoT device integration. Reduced administrative workload by 40% for healthcare providers.HIPAA-compliant patient management system with telemedicine capabilities, prescription tracking, and IoT device integration. Reduced administrative workload by 40% for healthcare providers.HIPAA-compliant patient management system with telemedicine capabilities, prescription tracking, and IoT device integration. Reduced administrative workload by 40% for healthcare providers.HIPAA-compliant patient management system with telemedicine capabilities, prescription tracking, and IoT device integration. Reduced administrative workload by 40% for healthcare providers.',
+            technologies: ['Angular', 'Python/Django', 'MySQL', 'Docker'],
+            client: 'Regional Healthcare Network',
+            year: 2023,
+        },
+        {
+            imageSrc: SamrtFactory,
+            title: 'SmartFactory',
+            subtitle: 'Industrial IoT Solution',
+            backContent:
+                'Real-time equipment monitoring system for manufacturing plants with predictive maintenance alerts and production analytics. Decreased downtime by 28% for our manufacturing clients.',
+            technologies: ['React', 'Kafka', 'TimeScaleDB', 'Kubernetes'],
+            client: 'Industrial Solutions Corp.',
+            year: 2021,
+        },
+    ],
+};
 
 export default function HomePage() {
     const [activeTab, setActiveTab] = useState('Tab1');
@@ -42,15 +60,23 @@ export default function HomePage() {
                 return (
                     <>
                         <div className=''>
-                            <h1 className='text-3xl font-bold text-center mb-10'>Tab1 Title</h1>
-                            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto'>
-                                {cardsData.map((card, idx) => (
+                            {/*   <div className='text-3xl font-bold text-center mb-10'>
+                                Web Application Development
+                            </div> */}
+                            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                                {portfolioData.portfolioProjects.map((project, idx) => (
                                     <FlipCard
                                         key={idx}
-                                        imageSrc={card.imageSrc}
-                                        title={card.title}
-                                        subtitle={card.subtitle}
-                                        backContent={card.backContent}
+                                        imageSrc={project.imageSrc}
+                                        title={project.title}
+                                        subtitle={project.subtitle}
+                                        backContent={project.backContent}
+                                        client={project.client}
+                                        year={project.year}
+                                        technologies={project.technologies}
+                                        href={`/portfolio/${project.title
+                                            .toLowerCase()
+                                            .replace(/\s+/g, '-')}`}
                                     />
                                 ))}
                             </div>
@@ -61,15 +87,23 @@ export default function HomePage() {
                 return (
                     <>
                         <div className=''>
-                            <h1 className='text-3xl font-bold text-center mb-10'>Tab2 Title</h1>
-                            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto'>
-                                {cardsData.map((card, idx) => (
+                            {/*  <div className='text-3xl font-bold text-center mb-10'>
+                                Mobile Application Development
+                            </div> */}
+                            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                                {portfolioData.portfolioProjects.map((project, idx) => (
                                     <FlipCard
                                         key={idx}
-                                        imageSrc={card.imageSrc}
-                                        title={card.title}
-                                        subtitle={card.subtitle}
-                                        backContent={card.backContent}
+                                        imageSrc={project.imageSrc}
+                                        title={project.title}
+                                        subtitle={project.subtitle}
+                                        backContent={project.backContent}
+                                        client={project.client}
+                                        year={project.year}
+                                        technologies={project.technologies}
+                                        href={`/portfolio/${project.title
+                                            .toLowerCase()
+                                            .replace(/\s+/g, '-')}`}
                                     />
                                 ))}
                             </div>
@@ -80,15 +114,21 @@ export default function HomePage() {
                 return (
                     <>
                         <div className=''>
-                            <h1 className='text-3xl font-bold text-center mb-10'>Tab3 Title</h1>
-                            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto'>
-                                {cardsData.map((card, idx) => (
+                            {/*  <div className='text-3xl font-bold text-center mb-10'>UI/UX Design</div> */}
+                            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                                {portfolioData.portfolioProjects.map((project, idx) => (
                                     <FlipCard
                                         key={idx}
-                                        imageSrc={card.imageSrc}
-                                        title={card.title}
-                                        subtitle={card.subtitle}
-                                        backContent={card.backContent}
+                                        imageSrc={project.imageSrc}
+                                        title={project.title}
+                                        subtitle={project.subtitle}
+                                        backContent={project.backContent}
+                                        client={project.client}
+                                        year={project.year}
+                                        technologies={project.technologies}
+                                        href={`/portfolio/${project.title
+                                            .toLowerCase()
+                                            .replace(/\s+/g, '-')}`}
                                     />
                                 ))}
                             </div>
@@ -102,7 +142,23 @@ export default function HomePage() {
 
     return (
         <div className='container py-12'>
-            <div className='flex justify-center text-lg py-4 font-semibold'>Our Portfolio</div>
+            <div className='flex justify-center items-center flex-col flex-wrap gap-4 pb-6'>
+                <div className='px-3 py-1 bg-secondary/75 rounded-full text-white text-sm font-light'>
+                    Our Portfolio
+                </div>
+
+                <div className='text-4xl font-bold flex flex-col items-center gap-0'>
+                    <div className='text-black'>Transformative Solutions</div>
+                    <div className='text-secondary'>That Drive Impact</div>
+                </div>
+
+                <div className='text-center text-gray-600 text-lg max-w-2xl'>
+                    Explore our portfolio of cutting-edge software solutions that have helped
+                    businesses increase efficiency by 40%, boost revenue by 35%, and enhance
+                    customer satisfaction. Each project represents our commitment to innovation and
+                    measurable results.
+                </div>
+            </div>
             <div className='flex space-x-4 justify-center items-center'>
                 <button
                     onClick={() => setActiveTab('Tab1')}
@@ -113,7 +169,7 @@ export default function HomePage() {
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
                 >
-                    Tab1
+                    Web Development
                 </button>
                 <button
                     onClick={() => setActiveTab('Tab2')}
@@ -124,7 +180,7 @@ export default function HomePage() {
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
                 >
-                    Tab2
+                    Mobile Development
                 </button>
                 <button
                     onClick={() => setActiveTab('Tab3')}
@@ -135,13 +191,11 @@ export default function HomePage() {
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
                 >
-                    Tab3
+                    UI/UX Design
                 </button>
             </div>
 
-            <div className='mt-6 p-4 bg-white border border-gray-200 rounded-md shadow'>
-                {renderTabContent()}
-            </div>
+            <div className='py-12'>{renderTabContent()}</div>
         </div>
     );
 }
