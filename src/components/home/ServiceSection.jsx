@@ -3,6 +3,7 @@ import DemoImage from '@/assets/ideaicon.png';
 import ArrowIcon from '@/assets/arrow.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import ServiceCategory from '../services/ServiceCategory';
 function ServiceSection() {
     return (
         <div className='container'>
@@ -20,106 +21,14 @@ function ServiceSection() {
                 </div>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-10'>
-                <Link href='#' className='block'>
-                    <div className='bg-white hover:bg-secondary p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200'>
-                        <div className='p-2 rounded-full group-hover:bg-[#f59e0b] inline-block my-6'>
-                            <Image src={DemoImage} alt='Service Image' height={50} width={50} />
-                        </div>
-                        <div className='text-2xl font-bold mb-2 group-hover:text-white pb-6'>
-                            <span className='block'>Web Application</span>
-                            <span className='block'>Development</span>
-                        </div>
-                        <div className='text-gray-600 group-hover:text-gray-200 pb-6'>
-                            Tailored software solutions to meet your unique business needs.
-                        </div>
-                        <div className='flex justify-end items-center'>
-                            <button className='group-hover:text-white group-hover:bg-[#f59e0b] group-hover:rounded-full px-4 py-3 cursor-pointer'>
-                                <Image
-                                    src={ArrowIcon}
-                                    alt='Arrow Icon'
-                                    height={20}
-                                    width={20}
-                                    className='inline-block'
-                                />
-                            </button>
-                        </div>
-                    </div>
-                </Link>
-                <Link href='#' className='block'>
-                    <div className='bg-white hover:bg-secondary p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200'>
-                        <div className='p-2 rounded-full group-hover:bg-[#f59e0b] inline-block my-6'>
-                            <Image src={DemoImage} alt='Service Image' height={50} width={50} />
-                        </div>
-                        <div className='text-2xl font-bold mb-2 group-hover:text-white pb-6'>
-                            <span className='block'>Mobile Application</span>
-                            <span className='block'>Development</span>
-                        </div>
-                        <div className='text-gray-600 group-hover:text-gray-200 pb-6'>
-                            Tailored software solutions to meet your unique business needs.
-                        </div>
-                        <div className='flex justify-end items-center'>
-                            <button className='group-hover:text-white group-hover:bg-[#f59e0b] group-hover:rounded-full px-4 py-3 cursor-pointer'>
-                                <Image
-                                    src={ArrowIcon}
-                                    alt='Arrow Icon'
-                                    height={20}
-                                    width={20}
-                                    className='inline-block'
-                                />
-                            </button>
-                        </div>
-                    </div>
-                </Link>
-                <Link href='#' className='block'>
-                    <div className='bg-white hover:bg-secondary p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200'>
-                        <div className='p-2 rounded-full group-hover:bg-[#f59e0b] inline-block my-6'>
-                            <Image src={DemoImage} alt='Service Image' height={50} width={50} />
-                        </div>
-                        <div className='text-2xl font-bold mb-2 group-hover:text-white pb-6'>
-                            <span className='block'>UI/UX</span>
-                            <span className='block'>Design</span>
-                        </div>
-                        <div className='text-gray-600 group-hover:text-gray-200 pb-6'>
-                            Tailored software solutions to meet your unique business needs.
-                        </div>
-                        <div className='flex justify-end items-center'>
-                            <button className='group-hover:text-white group-hover:bg-[#f59e0b] group-hover:rounded-full px-4 py-3 cursor-pointer'>
-                                <Image
-                                    src={ArrowIcon}
-                                    alt='Arrow Icon'
-                                    height={20}
-                                    width={20}
-                                    className='inline-block'
-                                />
-                            </button>
-                        </div>
-                    </div>
-                </Link>
-                <Link href='#' className='block'>
-                    <div className='bg-white hover:bg-secondary p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200'>
-                        <div className='p-2 rounded-full group-hover:bg-[#f59e0b] inline-block my-6'>
-                            <Image src={DemoImage} alt='Service Image' height={50} width={50} />
-                        </div>
-                        <div className='text-2xl font-bold mb-2 group-hover:text-white pb-6'>
-                            <span className='block'>Artificial</span>
-                            <span className='block'>Inteligence</span>
-                        </div>
-                        <div className='text-gray-600 group-hover:text-gray-200 pb-6'>
-                            Tailored software solutions to meet your unique business needs.
-                        </div>
-                        <div className='flex justify-end items-center'>
-                            <button className='group-hover:text-white group-hover:bg-[#f59e0b] group-hover:rounded-full px-4 py-3 cursor-pointer'>
-                                <Image
-                                    src={ArrowIcon}
-                                    alt='Arrow Icon'
-                                    height={20}
-                                    width={20}
-                                    className='inline-block'
-                                />
-                            </button>
-                        </div>
-                    </div>
+            <ServiceCategory />
+            <div className='flex justify-end items-center mt-10'>
+                <Link
+                    href='/services'
+                    className='border text-black px-6 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-secondary hover:text-white transition-colors'
+                >
+                    View All Services
+                    <Image src={ArrowIcon} alt='Arrow Icon' height={20} width={20} />
                 </Link>
             </div>
         </div>
