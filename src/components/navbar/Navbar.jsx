@@ -60,7 +60,7 @@ const Navbar = ({ isHomePage }) => {
             className={`transition-all duration-300 ease-in-out w-full sticky md:fixed top-0 z-[999] ${
                 isHomePage
                     ? isScrolled
-                        ? 'animated-gradient-diagonal-herosection shadow-md text-white'
+                        ? 'bg-[#002a57] shadow-md text-white'
                         : 'bg-transparent '
                     : 'bg-[#002a57] shadow-md text-white'
             }`}

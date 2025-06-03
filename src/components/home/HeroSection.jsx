@@ -1,10 +1,40 @@
 'use client';
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import DemoImage from '@/assets/demoimage.jpeg';
 import Image from 'next/image';
+import RightContent from './HeroImageSection';
+
+const Bubble = ({ size, left, delay, duration }) => {
+    return (
+        <motion.div
+            className='absolute rounded-full bg-white backdrop-blur-sm'
+            style={{
+                width: size,
+                height: size,
+                left: `${left}%`,
+                bottom: '-10%',
+            }}
+            initial={{ y: 0, opacity: 0, scaleY: 1, scaleX: 1 }}
+            animate={{
+                y: -1200,
+                opacity: [0, 0.5, 0.5, 0],
+                scaleY: [1, 0.8, 1.2, 1],
+                scaleX: [1, 1.2, 0.8, 1],
+            }}
+            transition={{
+                duration: duration,
+                delay: delay,
+                repeat: Infinity,
+                repeatType: 'loop',
+                ease: 'linear',
+            }}
+        />
+    );
+};
+
 const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -29,10 +59,36 @@ const stagger = {
         },
     },
 };
+
 function HeroSection() {
+    const [bubbles, setBubbles] = useState([]);
+
+    useEffect(() => {
+        const newBubbles = Array.from({ length: 15 }).map((_, i) => ({
+            id: i,
+            size: Math.random() * 60 + 20, // 20-80px
+            left: Math.random() * 100, // 0-100%
+            delay: Math.random() * 5, // 0-5s
+            duration: Math.random() * 20 + 10, // 10-30s
+        }));
+        setBubbles(newBubbles);
+    }, []);
+
     return (
-        <section className='animated-gradient-diagonal-herosection'>
-            <div className='container mx-auto px-4 min-h-screen flex flex-col lg:flex-row justify-between items-center text-white relative overflow-hidden py-16'>
+        <section className='animated-gradient-diagonal-herosection relative overflow-hidden'>
+            <div className='absolute inset-0 overflow-hidden'>
+                {bubbles.map((bubble) => (
+                    <Bubble
+                        key={bubble.id}
+                        size={bubble.size}
+                        left={bubble.left}
+                        delay={bubble.delay}
+                        duration={bubble.duration}
+                    />
+                ))}
+            </div>
+
+            <div className='container mx-auto px-4 min-h-screen flex flex-col lg:flex-row justify-between items-center text-white relative z-10 py-16'>
                 {/* Left Side */}
                 <motion.div
                     className='max-w-xl space-y-6 z-10 text-center lg:text-left mb-10 lg:mb-0'
@@ -78,50 +134,7 @@ function HeroSection() {
                     </motion.div>
                 </motion.div>
 
-                {/* Right Side */}
-                <div className='relative space-y-4 z-10 text-center'>
-                    <div className='flex flex-col sm:flex-row justify-center gap-4'>
-                        <div className='bg-white rounded-xl p-4 text-center shadow-md w-40'>
-                            <Image
-                                src='https://placehold.co/80x80'
-                                className='rounded-full mx-auto mb-2'
-                                height={80}
-                                width={80}
-                                alt='FPS Global'
-                                unoptimized
-                            />
-                            <p className='text-[#002a57] text-sm font-semibold'>
-                                Consulting Services
-                            </p>
-                            <p className='text-xs text-gray-500'>Integrated services</p>
-                        </div>
-                        <div className='bg-white rounded-xl p-4 text-center shadow-md w-40'>
-                            <Image
-                                src={DemoImage}
-                                className='rounded-full mx-auto mb-2'
-                                height={80}
-                                width={80}
-                                alt='FPS Global'
-                            />
-                            <p className='text-[#002a57] text-sm font-semibold'>
-                                Qualified Global Team
-                            </p>
-                            <p className='text-xs text-gray-500'>High performance</p>
-                        </div>
-                    </div>
-
-                    <div className='text-center text-sm mt-2'>
-                        <p className='text-white font-semibold'>
-                            547+
-                            <br />
-                            <span className='text-xs'>Smart Businesses growing with us</span>
-                        </p>
-                    </div>
-
-                    <div className='absolute bottom-[-40px] left-1/2 transform -translate-x-1/2 bg-white rounded-full px-4 py-1 text-[#002a57] text-sm font-medium shadow-lg'>
-                        <i className='fas fa-star text-[#facc15]'></i> Our Satisfied Customers
-                    </div>
-                </div>
+                <RightContent />
             </div>
         </section>
     );
