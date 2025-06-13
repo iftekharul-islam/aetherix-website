@@ -37,7 +37,7 @@ function ServiceCategory() {
     ];
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 mb-10'>
             {services.map((service, index) => (
                 <Link href={`/services/${service.id}`} className='block' key={service.id}>
                     <div className='bg-white hover:bg-secondary p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200'>

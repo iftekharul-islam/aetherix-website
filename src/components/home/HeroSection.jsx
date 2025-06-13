@@ -61,23 +61,11 @@ const stagger = {
 };
 
 function HeroSection() {
-    const [bubbles, setBubbles] = useState([]);
-
-    useEffect(() => {
-        const newBubbles = Array.from({ length: 15 }).map((_, i) => ({
-            id: i,
-            size: Math.random() * 60 + 20, // 20-80px
-            left: Math.random() * 100, // 0-100%
-            delay: Math.random() * 5, // 0-5s
-            duration: Math.random() * 20 + 10, // 10-30s
-        }));
-        setBubbles(newBubbles);
-    }, []);
 
     return (
         <section className='animated-gradient-diagonal-herosection relative overflow-hidden'>
             <div className='absolute inset-0 overflow-hidden'>
-                {bubbles.map((bubble) => (
+              {/*   {bubbles.map((bubble) => (
                     <Bubble
                         key={bubble.id}
                         size={bubble.size}
@@ -85,7 +73,7 @@ function HeroSection() {
                         delay={bubble.delay}
                         duration={bubble.duration}
                     />
-                ))}
+                ))} */}
             </div>
 
             <div className='container mx-auto px-4 min-h-screen flex flex-col lg:flex-row justify-between items-center text-white relative z-10 py-16'>

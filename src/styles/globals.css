@@ -76,24 +76,50 @@ body {
     padding-right: 1rem;
 }
 
-@keyframes gradient-diagonal-herosection {
-    0% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
+.animated-gradient-diagonal-herosection {
+   position: relative;
+  z-index: 0;
+  overflow: hidden;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary-500),
+    var(--secondary-400),
+    var(--primary-400),
+    var(--secondary-300),
+    var(--primary-500)
+  );
+  background-size: 300% 100%;
+  animation: gradient-horizontal-flow 10s ease-in-out infinite;
 }
 
-.animated-gradient-diagonal-herosection {
-    background: linear-gradient(135deg, #002a57, #0097b2);
-    background-size: 300% 300%;
-    animation: gradient-diagonal-herosection 8s ease infinite;
-    position: relative;
+.animated-gradient-diagonal-herosection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: inherit;
+  animation: inherit;
+  filter: blur(30px);
+  transform: scale(1.1);
+  z-index: -1;
 }
+
+@keyframes gradient-horizontal-flow {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+
+
+
 
 .marquee-container {
     overflow: hidden;
@@ -173,4 +199,18 @@ body {
     100% {
         transform: translateX(-50%);
     }
+}
+@import 'swiper/css/effect-coverflow';
+.customer-feedback-slider .swiper-pagination-bullet {
+  background: var(--primary);
+  opacity: 0.4;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s;
+}
+.customer-feedback-slider .swiper-pagination-bullet-active {
+  background: var(--secondary);
+  opacity: 1;
+  width: 30px;
+  border-radius: 8px;
 }
