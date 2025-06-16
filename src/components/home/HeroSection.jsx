@@ -61,21 +61,8 @@ const stagger = {
 };
 
 function HeroSection() {
-
     return (
-        <section className='animated-gradient-diagonal-herosection relative overflow-hidden'>
-            <div className='absolute inset-0 overflow-hidden'>
-              {/*   {bubbles.map((bubble) => (
-                    <Bubble
-                        key={bubble.id}
-                        size={bubble.size}
-                        left={bubble.left}
-                        delay={bubble.delay}
-                        duration={bubble.duration}
-                    />
-                ))} */}
-            </div>
-
+        <section className='animated-gradient-diagonal-herosection overflow-hidden'>
             <div className='container mx-auto px-4 min-h-screen flex flex-col lg:flex-row justify-between items-center text-white relative z-10 py-16'>
                 {/* Left Side */}
                 <motion.div

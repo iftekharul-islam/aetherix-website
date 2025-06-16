@@ -75,51 +75,49 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
 }
-
 .animated-gradient-diagonal-herosection {
-   position: relative;
-  z-index: 0;
-  overflow: hidden;
-
-  background: linear-gradient(
-    90deg,
-    var(--primary-500),
-    var(--secondary-400),
-    var(--primary-400),
-    var(--secondary-300),
-    var(--primary-500)
-  );
-  background-size: 300% 100%;
-  animation: gradient-horizontal-flow 10s ease-in-out infinite;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    background: #1a4b6d;
 }
 
+/* Animated teal "light" that moves corner-to-corner */
 .animated-gradient-diagonal-herosection::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  background-size: inherit;
-  animation: inherit;
-  filter: blur(30px);
-  transform: scale(1.1);
-  z-index: -1;
+    content: '';
+    position: absolute;
+    width: 500px; /* Size of the teal section */
+    height: 500px;
+    background: radial-gradient(circle at center, #00b4d8, transparent 70%);
+    filter: blur(40px);
+    animation: moveCornerToCorner 20s linear infinite;
+    z-index: -1;
+    pointer-events: none;
 }
 
-@keyframes gradient-horizontal-flow {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 0%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
+/* Keyframes for corner movement */
+@keyframes moveCornerToCorner {
+    0% {
+        top: -150px;
+        left: -150px;
+    }
+    25% {
+        top: -150px;
+        left: calc(100% - 150px);
+    }
+    50% {
+        top: calc(100% - 150px);
+        left: calc(100% - 150px);
+    }
+    75% {
+        top: calc(100% - 150px);
+        left: -150px;
+    }
+    100% {
+        top: -150px;
+        left: -150px;
+    }
 }
-
-
-
-
 
 .marquee-container {
     overflow: hidden;
@@ -202,15 +200,15 @@ body {
 }
 @import 'swiper/css/effect-coverflow';
 .customer-feedback-slider .swiper-pagination-bullet {
-  background: var(--primary);
-  opacity: 0.4;
-  width: 10px;
-  height: 10px;
-  transition: all 0.3s;
+    background: var(--primary);
+    opacity: 0.4;
+    width: 10px;
+    height: 10px;
+    transition: all 0.3s;
 }
 .customer-feedback-slider .swiper-pagination-bullet-active {
-  background: var(--secondary);
-  opacity: 1;
-  width: 30px;
-  border-radius: 8px;
+    background: var(--secondary);
+    opacity: 1;
+    width: 30px;
+    border-radius: 8px;
 }
