@@ -6,6 +6,10 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import ArrowIcon from '@/assets/arrow.png';
 import DemoImage from '@/assets/smartFactory.png';
+import soft from '@/assets/soft.jpeg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import Pricing from '@/components/services/Pricing';
 
 const services = [
     {
@@ -33,6 +37,14 @@ const services = [
             { value: '30%', label: 'Reduced Turnover' },
             { value: '4.8/5', label: 'Employee Satisfaction' },
         ],
+        sectionTitles: {
+            left: 'Streamline Workforce Management',
+            right: 'Boost Employee Engagement',
+        },
+        detailedText: {
+            left: 'Our HR solutions simplify recruitment, onboarding, and compliance tasks, helping HR teams operate more efficiently and focus on strategy.',
+            right: 'We empower employees with self-service tools and performance management systems to increase satisfaction and reduce turnover.',
+        },
     },
     {
         slug: 'finance-management',
@@ -59,6 +71,14 @@ const services = [
             { value: '99%', label: 'Accuracy Rate' },
             { value: '25%', label: 'Cost Savings' },
         ],
+        sectionTitles: {
+            left: 'Control Your Finances',
+            right: 'Gain Real-Time Insights',
+        },
+        detailedText: {
+            left: 'Automate your accounting, track cash flow, and stay compliant with financial regulations through our smart finance tools.',
+            right: 'Access up-to-date reports and dashboards that provide a clear picture of your business’s financial health and profitability.',
+        },
     },
     {
         slug: 'data-management',
@@ -93,6 +113,14 @@ const services = [
             { value: '90%', label: 'Data Accuracy' },
             { value: '60%', label: 'Process Automation' },
         ],
+        sectionTitles: {
+            left: 'Build a Data-Driven Organization',
+            right: 'Ensure Data Accuracy & Governance',
+        },
+        detailedText: {
+            left: 'Our tools help you store, manage, and analyze vast amounts of business data efficiently across departments.',
+            right: 'Implement strong data governance policies to maintain consistency, compliance, and decision-ready information.',
+        },
     },
     {
         slug: 'risk-management',
@@ -119,6 +147,14 @@ const services = [
             { value: '50%', label: 'Faster Processes' },
             { value: '4.7/5', label: 'User Satisfaction' },
         ],
+        sectionTitles: {
+            left: 'Optimize Your Operations',
+            right: 'Unify Business Processes',
+        },
+        detailedText: {
+            left: 'Reduce operational risks with automated workflows and standardized procedures tailored to your business.',
+            right: 'Gain centralized control over projects, inventory, and CRM to increase efficiency and scale confidently.',
+        },
     },
     {
         slug: 'software-services',
@@ -145,6 +181,14 @@ const services = [
             { value: '50%', label: 'Faster Processes' },
             { value: '4.7/5', label: 'User Satisfaction' },
         ],
+        sectionTitles: {
+            left: 'Drive Innovation with Technology',
+            right: 'Tailored Software for Your Needs',
+        },
+        detailedText: {
+            left: 'From web to enterprise solutions, we develop, deploy, and maintain systems that streamline your digital transformation.',
+            right: 'We build scalable, custom software applications that align with your business objectives and growth plans.',
+        },
     },
     {
         slug: 'lead-management',
@@ -171,6 +215,14 @@ const services = [
             { value: '30%', label: 'Shorter Sales Cycle' },
             { value: '5x', label: 'ROI on Marketing' },
         ],
+        sectionTitles: {
+            left: 'Capture and Nurture Leads',
+            right: 'Convert Prospects into Customers',
+        },
+        detailedText: {
+            left: 'Automatically gather leads from multiple channels and score them intelligently to prioritize your sales efforts.',
+            right: 'Use personalized workflows and analytics to engage leads and improve conversion rates throughout the sales pipeline.',
+        },
     },
 ];
 
@@ -188,235 +240,109 @@ function Page() {
     const service = services.find((s) => s.slug === slug);
 
     if (!service) return <p className='text-center mt-20'>Service not found</p>;
-
+    const plans = [
+        {
+            title: 'Basic Plan',
+            price: '$19/mo',
+            description: 'Perfect for small teams or individuals.',
+            features: ['1 Project', 'Basic Support', 'Community Access'],
+        },
+        {
+            title: 'Pro Plan',
+            price: '$49/mo',
+            description: 'Ideal for growing businesses.',
+            features: ['5 Projects', 'Priority Support', 'Custom Features'],
+        },
+        {
+            title: 'Enterprise Plan',
+            price: '$99/mo',
+            description: 'For large scale organizations.',
+            features: ['Unlimited Projects', 'Dedicated Support', 'Advanced Analytics'],
+        },
+    ];
     return (
         <>
             <SEO seo={servicespage} />
-            {/* Hero Section */}
-            <motion.section
-                initial='hidden'
-                animate='visible'
-                variants={fadeIn}
-                transition={{ duration: 0.6 }}
-                className='relative bg-gradient-to-br from-primary to-secondary text-white py-20 overflow-hidden'
-            >
-                <div className='absolute inset-0 opacity-20'>
-                    <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,transparent)]"></div>
-                </div>
-
-                <div className='container mx-auto px-6 relative z-10'>
-                    <div className='flex flex-col lg:flex-row items-center'>
-                        <div className='lg:w-1/2 mb-10 lg:mb-0'>
-                            <motion.button
-                                whileHover={{ x: -5 }}
-                                onClick={() => window.history.back()}
-                                className='flex items-center mb-8 text-primary-200 hover:text-white transition-colors'
-                            >
-                                <Image
-                                    src={ArrowIcon}
-                                    alt='Back'
-                                    className='mr-2 rotate-180'
-                                    width={16}
-                                    height={16}
-                                />
-                                Back to Services
-                            </motion.button>
-
-                            <motion.h1
-                                variants={fadeIn}
-                                transition={{ delay: 0.2 }}
-                                className='text-4xl md:text-5xl font-bold mb-6 leading-tight'
-                            >
-                                {service.title}
-                            </motion.h1>
-
-                            <motion.p
-                                variants={fadeIn}
-                                transition={{ delay: 0.3 }}
-                                className='text-xl text-primary-100 mb-8 max-w-2xl'
-                            >
-                                {service.description}
-                            </motion.p>
-
-                            <motion.div
-                                variants={fadeIn}
-                                transition={{ delay: 0.4 }}
-                                className='flex flex-wrap gap-4 mb-8'
-                            >
-                                {service.technologies.map((tech, index) => (
-                                    <span
-                                        key={index}
-                                        className='px-3 py-1 bg-gradient-to-br from-primary to-secondary bg-opacity-50 rounded-full text-sm'
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
-                            </motion.div>
-
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className='bg-white text-primary px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all cursor-pointer'
-                            >
-                                Get Started
-                            </motion.button>
-                        </div>
-
-                        <div className='lg:w-1/2 lg:pl-12'>
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.6, delay: 0.2 }}
-                                className='relative rounded-2xl overflow-hidden shadow-2xl'
-                            >
-                                <Image
-                                    src={service.image}
-                                    alt={service.title}
-                                    width={800}
-                                    height={600}
-                                    className='w-full h-auto object-cover'
-                                    priority
-                                />
-                                <div className='absolute inset-0  bg-gradient-to-t from-secondary/70 to-transparent'></div>
-                            </motion.div>
-                        </div>
-                    </div>
-                </div>
-            </motion.section>
-
-            {/* Stats Section */}
-            <section className='py-16 bg-gray-50'>
-                <div className='container mx-auto px-6'>
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-                        {service.stats.map((stat, index) => (
-                            <motion.div
-                                key={index}
-                                initial='hidden'
-                                whileInView='visible'
-                                variants={fadeIn}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                viewport={{ once: true }}
-                                className='bg-white p-8 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow'
-                            >
-                                <h3 className='text-4xl font-bold text-primary mb-2'>
-                                    {stat.value}
-                                </h3>
-                                <p className='text-gray-600'>{stat.label}</p>
-                            </motion.div>
-                        ))}
-                    </div>
+            <section className='bg-gradient-to-br from-[#002a57] to-[#0097b2] text-white py-10 md:py-30'>
+                <div className='container'>
+                    <h1 className='text-4xl font-bold mb-2'>{service.title}</h1>
+                    <p className='text-sm text-white/80'>Home | Services | {service.title}</p>
                 </div>
             </section>
-            {/* Detailed Description */}
-            <section className='py-20'>
-                <div className='container mx-auto px-6'>
-                    <motion.div
-                        initial='hidden'
-                        whileInView='visible'
-                        variants={fadeIn}
-                        viewport={{ once: true }}
-                        className='max-w-4xl mx-auto'
-                    >
-                        <h2 className='text-3xl font-bold text-gray-900 mb-8 text-center'>
-                            About Our {service.title}
-                        </h2>
-
-                        <div className='space-y-6 text-lg text-gray-700'>
-                            {service.longDescription.map((paragraph, index) => (
-                                <p key={index}>{paragraph}</p>
-                            ))}
+            <div className='container  mb-10'>
+                {/* first Section */}
+                <div className='flex flex-col lg:flex-row items-center gap-8 lg:gap-12 py-12'>
+                    <div className='w-full lg:w-1/2'>
+                        <div className='relative aspect-video lg:aspect-square rounded-lg overflow-hidden shadow-lg'>
+                            <Image
+                                src={soft}
+                                alt='Descriptive alt text'
+                                fill
+                                className='object-cover'
+                                priority
+                            />
                         </div>
-                    </motion.div>
-                </div>
-            </section>
-            {/* Features Section */}
-            <section className='py-20 bg-gray-50'>
-                <div className='container mx-auto px-6'>
-                    <motion.div
-                        initial='hidden'
-                        whileInView='visible'
-                        variants={fadeIn}
-                        viewport={{ once: true }}
-                    >
-                        <h2 className='text-3xl font-bold text-gray-900 mb-12 text-center'>
-                            Key Features
-                        </h2>
+                    </div>
 
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+                    <div className='w-full lg:w-1/2'>
+                        <h2 className='text-3xl sm:text-4xl font-bold text-gray-900 mb-4'>
+                            {service.title}
+                        </h2>
+                        <p className='text-lg text-gray-600 mb-6'>{service.description}</p>
+                        <ul className='space-y-4 mb-8'>
                             {service.features.map((feature, index) => (
-                                <motion.div
-                                    key={index}
-                                    variants={fadeIn}
-                                    transition={{ delay: index * 0.1 }}
-                                    whileHover={{ y: -5 }}
-                                    className='bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all'
-                                >
-                                    <div className='w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4'>
-                                        <svg
-                                            className='w-6 h-6 text-primary-600'
-                                            fill='none'
-                                            stroke='currentColor'
-                                            viewBox='0 0 24 24'
-                                        >
-                                            <path
-                                                strokeLinecap='round'
-                                                strokeLinejoin='round'
-                                                strokeWidth='2'
-                                                d='M5 13l4 4L19 7'
-                                            ></path>
-                                        </svg>
+                                <li className='flex items-start' key={index}>
+                                    <div className='flex-shrink-0 bg-secondary-400 rounded-full  mr-3'>
+                                        <div className='h-6 w-6 flex items-center justify-center bg-secondary-400 rounded-full'>
+                                            <svg
+                                                className='h-4 w-4 text-white'
+                                                viewBox='0 0 20 20'
+                                                fill='currentColor'
+                                            >
+                                                <path
+                                                    fillRule='evenodd'
+                                                    d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
+                                                    clipRule='evenodd'
+                                                />
+                                            </svg>
+                                        </div>
                                     </div>
-                                    <h3 className='text-xl font-semibold mb-2 text-gray-800'>
-                                        {feature}
-                                    </h3>
-                                    <p className='text-gray-600'>
-                                        Comprehensive solution for {feature.toLowerCase()} as part
-                                        of our {service.title.toLowerCase()} services.
-                                    </p>
-                                </motion.div>
+                                    <span className='text-gray-700'>{feature}</span>
+                                </li>
                             ))}
-                        </div>
-                    </motion.div>
+                        </ul>
+                        <button className='bg-primary-700 hover:bg-secondary-500 text-white font-medium py-2 px-6 rounded-full transition duration-300 cursor-pointer'>
+                            Contact Us
+                            <FontAwesomeIcon icon={faArrowRight} className='w-4 h-4 pl-2' />
+                        </button>
+                    </div>
                 </div>
-            </section>
-            {/* CTA Section */}
-            <section className='py-20 bg-gradient-to-br from-primary to-secondary text-white'>
-                <div className='container mx-auto px-6 text-center'>
-                    <motion.div
-                        initial='hidden'
-                        whileInView='visible'
-                        variants={fadeIn}
-                        viewport={{ once: true }}
-                        className='max-w-3xl mx-auto'
-                    >
-                        <h2 className='text-3xl md:text-4xl font-bold mb-6'>
-                            Ready to Transform Your Business?
-                        </h2>
-                        <p className='text-xl text-primary-100 mb-8'>
-                            Let's discuss how our {service.title.toLowerCase()} services can help
-                            you achieve your goals.
-                        </p>
-
-                        <div className='flex flex-col sm:flex-row justify-center gap-4'>
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className='bg-white text-primary px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all cursor-pointer'
-                            >
-                                Get a Free Consultation
-                            </motion.button>
-
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className='bg-transparent border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all cursor-pointer'
-                            >
-                                View Case Studies
-                            </motion.button>
+                {/* second Section */}
+                <section className='py-12 px-4 sm:px-6 lg:px-8 bg-white'>
+                    <div className='flex flex-col lg:flex-row gap-12'>
+                        <div className='w-full lg:w-1/2'>
+                            <div className='text-2xl font-semibold text-gray-900 mb-4'>
+                                {service.sectionTitles?.left}
+                            </div>
+                            <div className='prose text-gray-600 space-y-4'>
+                                {service.detailedText?.left}
+                            </div>
                         </div>
-                    </motion.div>
-                </div>
-            </section>
+
+                        <div className='w-full lg:w-1/2'>
+                            <div className='text-2xl font-semibold text-gray-900 mb-4'>
+                                {service.sectionTitles?.right}
+                            </div>
+                            <div className='prose text-gray-600 space-y-4'>
+                                {service.detailedText?.right}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {/*   third Section */}
+
+                <Pricing />
+            </div>
         </>
     );
 }
