@@ -2,42 +2,46 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
-import DemoImage from '../../assets/demoimage.jpeg';
+import offer1 from '@/assets/offer1.jpg';
+import offer2 from '@/assets/offer2.jpg';
+import offer3 from '@/assets/offer3.jpg';
+import offer4 from '@/assets/offer4.png';
+import offer5 from '@/assets/offer5.jpeg';
 function OfferSection() {
     const tiles = [
         {
             id: 1,
             title: 'Human Resource',
             category: 'Services',
-            image: DemoImage,
+            image: offer1,
             span: 1,
         },
         {
             id: 2,
             title: 'Finance Management',
             category: 'Services',
-            image: DemoImage,
+            image: offer2,
             span: 1,
         },
         {
             id: 3,
             title: 'Data Management',
             category: 'Services',
-            image: DemoImage,
+            image: offer3,
             span: 1,
         },
         {
             id: 4,
             title: 'Business Management',
             category: 'Services',
-            image: DemoImage,
+            image: offer4,
             span: 2,
         },
         {
             id: 5,
             title: 'Lead Management',
             category: 'Services',
-            image: DemoImage,
+            image: offer5,
             span: 1,
         },
     ];

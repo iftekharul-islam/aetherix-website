@@ -2,8 +2,9 @@
 import { motion, useInView, animate } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import DemoImage from '@/assets/demoimage.jpeg';
+import DemoImage from '@/assets/tsimage.png';
 import IconImage from '@/assets/ideaicon.png';
+import DemoImage2 from '@/assets/tsimage2.png';
 const RightSection = () => {
     const countRef = useRef(null);
     const isInView = useInView(countRef, { once: true });
@@ -40,7 +41,7 @@ const RightSection = () => {
         >
             <div className='flex-1 flex flex-col h-full justify-end gap-4'>
                 <motion.div
-                    className='relative rounded-xl overflow-hidden shadow-xl h-[350px]'
+                    className='relative rounded-xl overflow-hidden shadow-xl h-[350px] bg-[#00e0d0]'
                     variants={{
                         hidden: { opacity: 0, y: 30 },
                         visible: { opacity: 1, y: 0 },
@@ -50,10 +51,10 @@ const RightSection = () => {
                         src={DemoImage}
                         alt='Our Team'
                         fill
-                        className='object-cover'
+                        className='object-fill'
                         quality={100}
                     />
-                    <div className='absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4'>
+                    <div className='absolute bottom-0 left-0 right-0  p-4'>
                         <div className=' bg-white p-4 rounded-2xl'>
                             <div className='text-primary text-lg font-bold '>
                                 {' '}
@@ -108,14 +109,19 @@ const RightSection = () => {
                     }}
                 >
                     <div className='flex justify-end mb-2'>
-                        <div className='p-2 rounded-full bg-primary hover:bg-[#f59e0b]'>
-                            <Image
-                                src={IconImage}
-                                alt='Service Icon'
-                                height={50}
-                                width={50}
-                                className='w-[50px] h-[50px] object-contain'
-                            />
+                        <div className='p-2 rounded-full bg-[#001F3F] hover:bg-[#f59e0b]'>
+                            <svg
+                                width='50'
+                                height='50'
+                                viewBox='0 0 200 200'
+                                xmlns='http://www.w3.org/2000/svg'
+                                fill='white'
+                            >
+                                <path
+                                    d='M44.8,-68.2C57.6,-60.1,67.9,-48.4,72.1,-35.5C76.4,-22.7,74.6,-8.8,71.6,4.7C68.6,18.3,64.5,31.5,56.3,41.2C48.1,51,35.9,57.3,23.2,64.6C10.6,72,-2.6,80.3,-14.4,77C-26.3,73.6,-36.8,58.6,-46.6,45C-56.5,31.3,-65.8,19.1,-66.7,6C-67.6,-7.1,-60.1,-21,-51.2,-30.4C-42.4,-39.9,-32.3,-44.8,-22.3,-52.5C-12.4,-60.3,-2.7,-70.9,9.1,-82.3C20.9,-93.6,41.8,-105.7,44.8,-68.2Z'
+                                    transform='translate(100 100)'
+                                />
+                            </svg>
                         </div>
                     </div>
 
@@ -130,20 +136,20 @@ const RightSection = () => {
                 </motion.div>
 
                 <motion.div
-                    className='relative rounded-xl overflow-hidden shadow-xl h-[350px]'
+                    className='relative rounded-xl overflow-hidden shadow-xl h-[350px] bg-[#00e0d0]'
                     variants={{
                         hidden: { opacity: 0, y: 30 },
                         visible: { opacity: 1, y: 0 },
                     }}
                 >
                     <Image
-                        src={DemoImage}
+                        src={DemoImage2}
                         alt='Our Team'
                         fill
                         className='object-cover'
                         quality={100}
                     />
-                    <div className='absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4'>
+                    <div className='absolute bottom-0 left-0 right-0 p-4'>
                         <div className=' bg-white p-4 rounded-2xl'>
                             <div className='text-primary text-lg font-bold '>
                                 {' '}

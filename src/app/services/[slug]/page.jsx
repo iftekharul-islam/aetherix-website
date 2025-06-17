@@ -5,131 +5,171 @@ import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import ArrowIcon from '@/assets/arrow.png';
-import WebDevImage from '@/assets/smartFactory.png';
-import MobileDevImage from '@/assets/roketbus.svg';
-import UIDesignImage from '@/assets/shopify.png';
-import AIImage from '@/assets/smartFactory.png';
+import DemoImage from '@/assets/smartFactory.png';
 
 const services = [
     {
-        id: 1,
-        title: 'Web Application Development',
+        slug: 'human-resource',
+        title: 'Human Resource',
         description:
-            'We build scalable and robust web applications tailored to your business goals using modern technologies.',
+            'Comprehensive HR solutions to manage your workforce effectively and efficiently.',
         longDescription: [
-            'Our web development team specializes in creating high-performance, secure, and scalable web applications that drive business growth. We leverage cutting-edge technologies like React, Next.js, Node.js, and modern CSS frameworks to deliver exceptional digital experiences.',
-            'From single-page applications to complex enterprise systems, we architect solutions that are maintainable, extensible, and optimized for performance. Our development process includes rigorous testing, continuous integration, and deployment automation.',
-            'We focus on creating web applications that not only look stunning but also provide intuitive user experiences, accessibility compliance, and seamless functionality across all devices and browsers.',
+            'Our Human Resource services provide end-to-end solutions for all your workforce management needs. From recruitment and onboarding to performance management and employee engagement, we offer tools and expertise to streamline your HR processes.',
+            'We implement modern HR technologies that automate routine tasks, reduce paperwork, and provide actionable insights about your workforce. Our solutions help you attract top talent, retain valuable employees, and maintain compliance with labor regulations.',
+            'With our HR services, you can focus on strategic initiatives while we handle the operational aspects of human resource management, creating a more productive and satisfied workforce.',
         ],
         features: [
-            'Custom web application development',
-            'Progressive Web Apps (PWA)',
-            'E-commerce solutions',
-            'API development & integration',
-            'Cloud deployment & optimization',
-            'Performance tuning & security hardening',
+            'Recruitment and onboarding',
+            'Performance management',
+            'Employee self-service portal',
+            'Payroll integration',
+            'Compliance management',
+            'Workforce analytics',
+        ],
+        technologies: ['BambooHR', 'Workday', 'ADP', 'Zenefits', 'Paycom', 'SuccessFactors'],
+        image: DemoImage,
+        stats: [
+            { value: '50%', label: 'Faster Hiring' },
+            { value: '30%', label: 'Reduced Turnover' },
+            { value: '4.8/5', label: 'Employee Satisfaction' },
+        ],
+    },
+    {
+        slug: 'finance-management',
+        title: 'Finance Management',
+        description:
+            'Advanced financial tools to optimize your accounting, budgeting, and financial reporting.',
+        longDescription: [
+            'Our Finance Management services provide comprehensive solutions for all your financial operations. We offer tools for accounting, budgeting, financial reporting, and analysis that give you complete visibility into your financial health.',
+            'We implement systems that automate financial processes, reduce errors, and provide real-time insights into your cash flow, expenses, and revenue. Our solutions help you make data-driven financial decisions and maintain compliance with accounting standards.',
+            'From small businesses to large enterprises, our financial management services scale with your needs, providing the right level of sophistication and automation for your organization.',
+        ],
+        features: [
+            'General ledger accounting',
+            'Accounts payable/receivable',
+            'Budgeting and forecasting',
+            'Financial reporting',
+            'Tax compliance',
+            'Cash flow management',
+        ],
+        technologies: ['QuickBooks', 'Xero', 'Sage', 'NetSuite', 'FreshBooks', 'Zoho Books'],
+        image: DemoImage,
+        stats: [
+            { value: '40%', label: 'Faster Reporting' },
+            { value: '99%', label: 'Accuracy Rate' },
+            { value: '25%', label: 'Cost Savings' },
+        ],
+    },
+    {
+        slug: 'data-management',
+        title: 'Data Management',
+        description:
+            'Robust data solutions to collect, store, process, and analyze your business information.',
+        longDescription: [
+            'Our Data Management services help you harness the power of your business data. We provide solutions for data collection, storage, processing, and analysis that turn raw data into actionable insights.',
+            'We implement data governance frameworks that ensure data quality, security, and compliance. Our solutions help you break down data silos, integrate disparate systems, and create a single source of truth for your organization.',
+            'Whether you need simple data warehousing or advanced analytics capabilities, our data management services provide the foundation for data-driven decision making across your organization.',
+        ],
+        features: [
+            'Data warehousing',
+            'ETL processes',
+            'Data quality management',
+            'Master data management',
+            'Data governance',
+            'Business intelligence',
         ],
         technologies: [
-            'React',
-            'Next.js',
-            'Node.js',
-            'TypeScript',
-            'Tailwind CSS',
-            'GraphQL',
-            'MongoDB',
-            'PostgreSQL',
+            'Snowflake',
+            'SQL Server',
+            'Oracle',
+            'Talend',
+            'Informatica',
+            'Tableau',
+            'Power BI',
         ],
-        image: WebDevImage,
+        image: DemoImage,
         stats: [
-            { value: '300+', label: 'Projects Completed' },
-            { value: '4.9/5', label: 'Client Satisfaction' },
-            { value: '40%', label: 'Faster Load Times' },
+            { value: '10x', label: 'Faster Insights' },
+            { value: '90%', label: 'Data Accuracy' },
+            { value: '60%', label: 'Process Automation' },
         ],
     },
     {
-        id: 2,
-        title: 'Mobile Application Development',
+        slug: 'risk-management',
+        title: 'Risk Management',
         description:
-            'From iOS to Android, we create mobile apps with excellent performance and intuitive design.',
+            'End-to-end business solutions to streamline operations and drive organizational growth.',
         longDescription: [
-            'Our mobile development team crafts beautiful, high-performance applications for both iOS and Android platforms. We use native and cross-platform technologies to deliver apps that feel at home on any device while maximizing code reuse.',
-            'We follow mobile-first design principles and pay special attention to touch interactions, offline capabilities, and device hardware integration. Our apps are optimized for battery efficiency, smooth animations, and instant responsiveness.',
-            'From concept to App Store deployment, we handle every aspect of mobile development including push notifications, in-app purchases, analytics integration, and regular updates to keep your app current with platform requirements.',
+            'Our Business Management services provide comprehensive tools to run your entire operation more efficiently. We integrate all aspects of your business - from operations to customer relations - into a unified system that provides complete visibility and control.',
+            'We implement business process automation that eliminates redundant tasks, reduces errors, and accelerates workflows. Our solutions help you standardize operations, improve collaboration, and scale your business effectively.',
+            'Whether you need to manage projects, track inventory, or automate workflows, our business management services provide the tools and expertise to optimize your operations and drive growth.',
         ],
         features: [
-            'iOS & Android app development',
-            'React Native cross-platform apps',
-            'Mobile UI/UX design',
-            'API integration',
-            'Offline-first architecture',
-            'App Store optimization',
+            'Process automation',
+            'Project management',
+            'Inventory control',
+            'CRM integration',
+            'Workflow management',
+            'Business analytics',
         ],
-        technologies: ['Swift', 'Kotlin', 'React Native', 'Flutter', 'Firebase', 'GraphQL'],
-        image: MobileDevImage,
+        technologies: ['SAP', 'Microsoft Dynamics', 'Odoo', 'Salesforce', 'Zoho One', 'ERPNext'],
+        image: DemoImage,
         stats: [
-            { value: '200+', label: 'Apps Published' },
-            { value: '10M+', label: 'Combined Downloads' },
-            { value: '4.8/5', label: 'Average Rating' },
+            { value: '35%', label: 'Efficiency Gain' },
+            { value: '50%', label: 'Faster Processes' },
+            { value: '4.7/5', label: 'User Satisfaction' },
         ],
     },
     {
-        id: 3,
-        title: 'UI/UX Design',
+        slug: 'software-services',
+        title: 'IT/Softeware Services',
         description:
-            'Our design process ensures a seamless user experience that is both beautiful and effective.',
+            'End-to-end business solutions to streamline operations and drive organizational growth.',
         longDescription: [
-            'Our UI/UX design team creates digital experiences that users love. We combine aesthetic excellence with psychological principles to design interfaces that are intuitive, accessible, and delightful to use.',
-            'We start with thorough user research, creating personas and journey maps to understand your audience. Our iterative design process includes wireframing, prototyping, and user testing to validate concepts before development begins.',
-            'Every pixel is placed with purpose. We design for clarity, efficiency, and emotional connection, ensuring your product stands out in a crowded market while meeting business objectives and user needs.',
+            'Our Business Management services provide comprehensive tools to run your entire operation more efficiently. We integrate all aspects of your business - from operations to customer relations - into a unified system that provides complete visibility and control.',
+            'We implement business process automation that eliminates redundant tasks, reduces errors, and accelerates workflows. Our solutions help you standardize operations, improve collaboration, and scale your business effectively.',
+            'Whether you need to manage projects, track inventory, or automate workflows, our business management services provide the tools and expertise to optimize your operations and drive growth.',
         ],
         features: [
-            'User research & testing',
-            'Wireframing & prototyping',
-            'Interaction design',
-            'Design systems',
-            'Accessibility compliance',
-            'Motion design & micro-interactions',
+            'Process automation',
+            'Project management',
+            'Inventory control',
+            'CRM integration',
+            'Workflow management',
+            'Business analytics',
         ],
-        technologies: ['Figma', 'Sketch', 'Adobe XD', 'Framer', 'After Effects', 'Webflow'],
-        image: UIDesignImage,
+        technologies: ['SAP', 'Microsoft Dynamics', 'Odoo', 'Salesforce', 'Zoho One', 'ERPNext'],
+        image: DemoImage,
         stats: [
-            { value: '95%', label: 'Usability Improvement' },
-            { value: '3x', label: 'Faster Development' },
-            { value: '40%', label: 'Higher Engagement' },
+            { value: '35%', label: 'Efficiency Gain' },
+            { value: '50%', label: 'Faster Processes' },
+            { value: '4.7/5', label: 'User Satisfaction' },
         ],
     },
     {
-        id: 4,
-        title: 'Artificial Intelligence',
+        slug: 'lead-management',
+        title: 'Lead Management',
         description:
-            'We integrate AI into your systems to enable smart automation and data-driven decisions.',
+            'Complete lead lifecycle solutions to capture, nurture, and convert prospects into customers.',
         longDescription: [
-            'Our AI solutions transform businesses by automating complex processes, extracting insights from data, and creating intelligent systems that learn and adapt. We implement practical AI solutions that deliver measurable business value.',
-            'From computer vision to natural language processing, our team specializes in applying the latest AI research to real-world problems. We focus on ethical AI development, ensuring our solutions are fair, explainable, and privacy-preserving.',
-            'Whether you need predictive analytics, recommendation engines, or fully autonomous systems, we have the expertise to design, develop, and deploy AI solutions tailored to your specific needs and infrastructure.',
+            'Our Lead Management services help you optimize your sales pipeline from first contact to closed deal. We provide tools to capture leads from multiple sources, score them based on engagement, and route them to the appropriate sales channels.',
+            'We implement lead nurturing workflows that keep prospects engaged with personalized content and timely follow-ups. Our solutions help you shorten sales cycles, improve conversion rates, and maximize the value of your marketing efforts.',
+            'From small businesses to enterprise sales teams, our lead management services provide the automation and intelligence you need to turn more prospects into paying customers.',
         ],
         features: [
-            'Machine learning models',
-            'Computer vision solutions',
-            'Natural language processing',
-            'Predictive analytics',
-            'AI-powered automation',
-            'Data pipeline architecture',
+            'Lead capture forms',
+            'Automated lead scoring',
+            'CRM integration',
+            'Email nurturing',
+            'Sales pipeline management',
+            'Conversion analytics',
         ],
-        technologies: [
-            'Python',
-            'TensorFlow',
-            'PyTorch',
-            'OpenCV',
-            'Hugging Face',
-            'LangChain',
-            'LLMs',
-        ],
-        image: AIImage,
+        technologies: ['HubSpot', 'Salesforce', 'Marketo', 'Pardot', 'Zoho CRM', 'Freshsales'],
+        image: DemoImage,
         stats: [
-            { value: '70%', label: 'Process Automation' },
-            { value: '5x', label: 'Faster Insights' },
-            { value: '30%', label: 'Cost Reduction' },
+            { value: '40%', label: 'Higher Conversion' },
+            { value: '30%', label: 'Shorter Sales Cycle' },
+            { value: '5x', label: 'ROI on Marketing' },
         ],
     },
 ];
@@ -141,11 +181,11 @@ const fadeIn = {
 
 function Page() {
     const params = useParams();
-    const id = params?.id ? parseInt(String(params.id)) : null;
+    const slug = params?.slug;
 
-    if (!id) return <div className='flex justify-center items-center h-screen'>Loading...</div>;
+    if (!slug) return <div className='flex justify-center items-center h-screen'>Loading...</div>;
 
-    const service = services.find((s) => s.id === id);
+    const service = services.find((s) => s.slug === slug);
 
     if (!service) return <p className='text-center mt-20'>Service not found</p>;
 
@@ -330,8 +370,8 @@ function Page() {
                                         {feature}
                                     </h3>
                                     <p className='text-gray-600'>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                                        do eiusmod tempor incididunt.
+                                        Comprehensive solution for {feature.toLowerCase()} as part
+                                        of our {service.title.toLowerCase()} services.
                                     </p>
                                 </motion.div>
                             ))}
