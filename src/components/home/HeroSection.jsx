@@ -63,7 +63,7 @@ const stagger = {
 function HeroSection() {
     return (
         <section className='animated-gradient-diagonal-herosection overflow-hidden'>
-            <div className='container mx-auto px-4 min-h-screen flex flex-col lg:flex-row justify-between items-center text-white relative z-10 py-16'>
+            <div className='container  min-h-screen flex flex-col lg:flex-row justify-between items-center text-white relative z-10 py-16'>
                 {/* Left Side */}
                 <motion.div
                     className='max-w-xl space-y-6 z-10 text-center lg:text-left mb-10 lg:mb-0'
