@@ -10,6 +10,7 @@ import soft from '@/assets/soft.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Pricing from '@/components/services/Pricing';
+import ServiceQandA from '@/components/services/ServiceQandA';
 
 const services = [
     {
@@ -270,7 +271,6 @@ function Page() {
                 </div>
             </section>
             <div className='container  mb-10'>
-                {/* first Section */}
                 <div className='flex flex-col lg:flex-row items-center gap-8 lg:gap-12 py-12'>
                     <div className='w-full lg:w-1/2'>
                         <div className='relative aspect-video lg:aspect-square rounded-lg overflow-hidden shadow-lg'>
@@ -317,8 +317,7 @@ function Page() {
                         </button>
                     </div>
                 </div>
-                {/* second Section */}
-                <section className='py-12 px-4 sm:px-6 lg:px-8 bg-white'>
+                <section className='py-12  bg-white'>
                     <div className='flex flex-col lg:flex-row gap-12'>
                         <div className='w-full lg:w-1/2'>
                             <div className='text-2xl font-semibold text-gray-900 mb-4'>
@@ -339,9 +338,24 @@ function Page() {
                         </div>
                     </div>
                 </section>
-                {/*   third Section */}
-
-                <Pricing />
+                <section>
+                    <div className='flex justify-between flex-col  gap-2 flex-wrap'>
+                        <div className='text-xs text-[#9ca3af]  font-semibold'>Our Pricing</div>
+                        <div className='text-3xl font-bold '>
+                            Discover Clear and Competitive Pricing
+                        </div>
+                    </div>
+                    <Pricing />
+                </section>
+                <section className='flex flex-wrap md:flex-nowrap items-start gap-4 mt-10 w-full'>
+                    <div className='w-full md:w-1/3 flex flex-col gap-2'>
+                        <div className='text-xs text-[#9ca3af] font-semibold'>Help Center</div>
+                        <div className='text-3xl font-bold'>Get Answer to Your Queries Here</div>
+                    </div>
+                    <div className='w-full md:w-2/3'>
+                        <ServiceQandA />
+                    </div>
+                </section>
             </div>
         </>
     );
