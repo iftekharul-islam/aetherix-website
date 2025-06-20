@@ -1,5 +1,5 @@
 import SEO from "@/components/global/SEO";
-import Service from "@/components/service/Services";
+import Services from "@/components/services/Services";
 import servicespage from "@/seo/servicespage";
 
 const index = () => {
@@ -7,7 +7,7 @@ const index = () => {
     return (
         <>
             <SEO seo={seo} />
-            <Service />
+            <Services />
         </>
     );
 }
