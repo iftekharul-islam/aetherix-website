@@ -9,8 +9,9 @@ import DemoImage from '@/assets/smartFactory.png';
 import soft from '@/assets/soft.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import Pricing from '@/components/services/Pricing';
+import Pricing from '@/components/global/Pricing';
 import ServiceQandA from '@/components/services/ServiceQandA';
+import Newsletter from '@/components/global/NewsLetter';
 
 const services = [
     {
@@ -346,6 +347,9 @@ function Page() {
                         </div>
                     </div>
                     <Pricing />
+                </section>
+                <section className='py-10'>
+                    <Newsletter />
                 </section>
                 <section className='flex flex-wrap md:flex-nowrap items-start gap-4 mt-10 w-full'>
                     <div className='w-full md:w-1/3 flex flex-col gap-2'>
