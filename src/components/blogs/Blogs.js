@@ -9,6 +9,8 @@ import offer6 from '@/assets/offer6.jpeg';
 import offer7 from '@/assets/offer7.jpg';
 import offer8 from '@/assets/offer8.jpg';
 import BlogList from './BlogList';
+import { UserRound } from 'lucide-react';
+
 const Blogs = () => {
     const blogData = {
         featured: {
@@ -105,14 +107,16 @@ const Blogs = () => {
                                     height={440}
                                     className='rounded-lg mb-4 w-full'
                                 />
-                                <h3 className='text-xl font-semibold mb-2 text-[#002a57]'>
+                                <div className='text-xl font-semibold mb-2 text-[#002a57]'>
                                     {blogData.featured.title}
-                                </h3>
-                                <p className='text-sm text-[#475569] mb-2'>
-                                    <i className='fas fa-user mr-1 text-[#00b3c8]'></i>{' '}
-                                    {blogData.featured.author} <span className='mx-2'>•</span>{' '}
+                                </div>
+                                <p className='text-sm text-[#475569] mb-2 flex items-center gap-1'>
+                                    <UserRound className='w-4 h-4 text-primary' />
+                                    {blogData.featured.author}
+                                    <span className='mx-2'>•</span>
                                     {blogData.featured.date}
                                 </p>
+
                                 <p className='text-base text-[#475569] mb-4 flex-grow'>
                                     {blogData.featured.excerpt}
                                 </p>
@@ -142,12 +146,14 @@ const Blogs = () => {
                                     />
                                 </div>
                                 <div className='p-4 sm:w-1/2 flex flex-col'>
-                                    <h3 className='text-base font-semibold mb-1 text-[#002a57]'>
+                                    <div className='text-base font-semibold mb-1 text-[#002a57]'>
                                         {blog.title}
-                                    </h3>
-                                    <p className='text-xs text-[#475569] mb-2'>
-                                        <i className='fas fa-user mr-1 text-[#00b3c8]'></i>{' '}
-                                        {blog.author} <span className='mx-2'>•</span> {blog.date}
+                                    </div>
+                                    <p className='text-xs text-[#475569] mb-2 flex items-center gap-1'>
+                                        <UserRound className='w-3 h-3 text-primary' />
+                                        {blogData.featured.author}
+                                        <span className='mx-2'>•</span>
+                                        {blogData.featured.date}
                                     </p>
                                     <p className='text-sm text-[#475569] mb-3 line-clamp-2 flex-grow'>
                                         {blog.excerpt}
