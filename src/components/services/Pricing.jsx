@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { MoveRight } from 'lucide-react';
 const pricingPlans = [
     {
         id: 1,
@@ -40,8 +40,8 @@ export default function GradientPricingSection() {
     const [selectedPlan, setSelectedPlan] = React.useState(null);
 
     return (
-        <section className='py-16'>
-            <div className='max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8'>
+        <section className='pb-16 pt-8'>
+            <div className='max-w-6xl  grid grid-cols-1 md:grid-cols-3 gap-8'>
                 {pricingPlans.map((plan) => (
                     <div
                         key={plan.id}
@@ -103,11 +103,13 @@ export default function GradientPricingSection() {
                                 </ul>
 
                                 <button
-                                    className={`w-full py-3 px-6 rounded-full font-medium transition-colors duration-200 
-                    bg-primary-700 hover:bg-primary-600 text-white border border-primary-600
-                    ${selectedPlan === plan.id ? 'ring-2 ring-offset-2 ring-primary-500' : ''}`}
+                                    className={`w-full py-3 px-6 flex justify-center items-center gap-2 cursor-pointer rounded-full font-medium transition-colors duration-200 bg-primary-700 hover:bg-primary-600 text-white border border-primary-600 ${
+                                        selectedPlan === plan.id
+                                            ? 'ring-2 ring-offset-2 ring-primary-500'
+                                            : ''
+                                    }`}
                                 >
-                                    Subscribe Now
+                                    <span> Subscribe Now</span> <MoveRight />
                                 </button>
                             </div>
                         </div>
