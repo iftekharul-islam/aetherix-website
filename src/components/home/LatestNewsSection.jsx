@@ -89,8 +89,10 @@ function LatestNewsSection() {
         <section className='py-20 container'>
             <div className='flex justify-between items-center gap-2 flex-wrap'>
                 <div>
-                    <div className='text-xs text-[#9ca3af] uppercase font-semibold'>Lates News</div>
-                    <div className='text-3xl font-bold mb-2'>What We Offer</div>
+                    <div className='text-xs text-[#9ca3af] uppercase font-semibold'>
+                        Latest News
+                    </div>
+                    <div className='text-3xl font-bold mb-2'>Get the Latest News</div>
                 </div>
                 <div className='text-[#475569] max-w-2xl'>
                     Our highly qualified global team is uniquely qualified to deliver
