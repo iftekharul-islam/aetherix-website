@@ -1,5 +1,5 @@
 import SEO from "@/components/global/SEO";
-import Service from "@/components/service/Service";
+import Service from "@/components/service/Services";
 import servicespage from "@/seo/servicespage";
 
 const index = () => {
