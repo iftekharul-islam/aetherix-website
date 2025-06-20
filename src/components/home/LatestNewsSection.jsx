@@ -1,61 +1,109 @@
 import React from 'react';
-
+import BlogList from '../blogs/BlogList';
+import offer1 from '@/assets/offer1.jpg';
+import offer2 from '@/assets/offer2.jpg';
+import offer3 from '@/assets/offer3.jpg';
+import offer4 from '@/assets/offer4.png';
+import offer5 from '@/assets/offer5.jpeg';
+import offer6 from '@/assets/offer6.jpeg';
+import offer7 from '@/assets/offer7.jpg';
+import offer8 from '@/assets/offer8.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 function LatestNewsSection() {
-    const blogPosts = [
-        {
+    const blogData = {
+        featured: {
             id: 1,
             title: 'Understanding the Benefits of Business Consulting',
             author: 'Austin King',
-            date: '5 Jan, 2023',
-            image: 'https://placehold.co/400x200',
+            date: '15 Jan, 2023',
+            excerpt:
+                "For our July 2023 Employee Spotlight, Stewart Erickson, a Senior Technical Project Manager, talks about his career and some of the exciting projects he's worked on during his time at the company.",
+            image: offer1,
+            link: '/blogs/business-consulting',
         },
-        {
-            id: 2,
-            title: 'Top 5 Signs Your Business Needs a Consultant',
-            author: 'Austin King',
-            date: '5 Jan, 2023',
-            image: 'https://placehold.co/400x200',
-        },
-        {
-            id: 3,
-            title: 'The Role of Business Consultants in Digital Transformation',
-            author: 'Austin King',
-            date: '5 Jan, 2023',
-            image: 'https://placehold.co/400x200',
-        },
-    ];
+        regular: [
+            {
+                id: 2,
+                title: 'Digital Transformation Strategies for 2023',
+                author: 'Sarah Johnson',
+                date: '22 Feb, 2023',
+                excerpt:
+                    'Explore the latest trends in digital transformation and how businesses can adapt to stay competitive in the coming year.',
+                image: offer2,
+                link: '/blogs/digital-transformation',
+            },
+            {
+                id: 3,
+                title: 'The Future of Remote Work Post-Pandemic',
+                author: 'Michael Chen',
+                date: '5 Mar, 2023',
+                excerpt:
+                    'How companies are adapting their workplace policies as we move into a new era of hybrid work environments.',
+                image: offer3,
+                link: '/blogs/remote-work',
+            },
+            {
+                id: 4,
+                title: 'Sustainable Business Practices in 2023',
+                author: 'Emma Wilson',
+                date: '18 Apr, 2023',
+                excerpt:
+                    'Discover how leading companies are implementing eco-friendly initiatives while maintaining profitability.',
+                image: offer8,
+                link: '/blogs/sustainable-business',
+            },
+            {
+                id: 5,
+                title: 'AI and Machine Learning: Business Applications',
+                author: 'David Kim',
+                date: '2 May, 2023',
+                excerpt:
+                    'Practical applications of artificial intelligence that are transforming industries today.',
+                image: offer5,
+                link: '/blogs/ai-applications',
+            },
+            {
+                id: 6,
+                title: 'Customer Experience Trends to Watch',
+                author: 'Lisa Rodriguez',
+                date: '14 Jun, 2023',
+                excerpt:
+                    'The most important CX trends that will define successful businesses this year.',
+                image: offer8,
+                link: '/blogs/customer-experience',
+            },
+            {
+                id: 7,
+                title: 'Financial Planning in Uncertain Times',
+                author: 'James Peterson',
+                date: '28 Jul, 2023',
+                excerpt:
+                    'Strategies for maintaining financial stability during economic fluctuations.',
+                image: offer7,
+                link: '/blogs/financial-planning',
+            },
+        ],
+    };
     return (
         <section className='py-20 container'>
-            <p className='text-xs text-[#9ca3af] uppercase font-semibold'>News</p>
-            <h2 className='text-3xl font-bold mb-4'>Latest News</h2>
-            <p className='text-[#475569] mb-10 max-w-2xl'>
-                Our highly qualified global team is uniquely qualified to deliver high-performance
-                sustainable landmark buildings through our integrated suite
-            </p>
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4'>
-                {blogPosts.map((post) => (
-                    <div
-                        key={post.id}
-                        className='border rounded-xl p-6 bg-white shadow hover:shadow-md transition'
-                    >
-                        <img
-                            src={post.image}
-                            alt={post.title}
-                            className='rounded-lg mb-4 w-full h-auto object-cover'
-                        />
-                        <p className='text-lg font-semibold mb-2'>{post.title}</p>
-                        <p className='text-sm text-gray-500 mb-2'>
-                            by {post.author} • {post.date}
-                        </p>
-                        <button className='text-[#002a57] font-semibold hover:underline'>
-                            Read More
-                        </button>
-                    </div>
-                ))}
+            <div className='flex justify-between items-center gap-2 flex-wrap'>
+                <div>
+                    <div className='text-xs text-[#9ca3af] uppercase font-semibold'>Lates News</div>
+                    <div className='text-3xl font-bold mb-2'>What We Offer</div>
+                </div>
+                <div className='text-[#475569] max-w-2xl'>
+                    Our highly qualified global team is uniquely qualified to deliver
+                    high-performance sustainable landmark buildings through our integrated suite
+                </div>
             </div>
+            <section>
+                <BlogList blogData={blogData} />
+            </section>
             <div className='text-center mt-10'>
-                <button className='px-6 py-3 rounded-full border border-[#002a57] text-[#002a57] font-semibold flex items-center gap-2 mx-auto'>
-                    View All <i className='fas fa-arrow-right'></i>
+                <button className='px-6 py-3 rounded-full border text-white bg-[#002a57] font-normal flex items-center gap-2 mx-auto cursor-pointer'>
+                    View All
+                    <FontAwesomeIcon icon={faArrowRight} className='w-4 h-4' />
                 </button>
             </div>
         </section>
