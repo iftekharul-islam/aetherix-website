@@ -9,7 +9,7 @@ import DemoImage from '@/assets/smartFactory.png';
 import soft from '@/assets/soft.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import Pricing from '@/components/services/Pricing';
+import Pricing from '@/components/global/Pricing';
 import ServiceQandA from '@/components/services/ServiceQandA';
 import Newsletter from '@/components/global/NewsLetter';
 
