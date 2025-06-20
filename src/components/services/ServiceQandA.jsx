@@ -1,20 +1,31 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const QandAitem = ({ title, content }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const contentRef = useRef(null);
 
     return (
-        <div className='border border-gray-200 rounded-xl mb-4 shadow-sm'>
+        <div className='border border-gray-200 rounded-xl overflow-hidden mb-4 shadow-sm transition-all duration-300'>
             <button
-                className='flex justify-between items-center w-full px-6 py-4 bg-white hover:bg-gray-200 transition-colors duration-200'
+                className='flex justify-between items-center w-full px-6 py-4 bg-white hover:bg-gray-200 transition-colors duration-200 cursor-pointer'
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <span className='text-left font-medium text-gray-800'>{title}</span>
                 {isOpen ? <ChevronUp className='h-5 w-5' /> : <ChevronDown className='h-5 w-5' />}
             </button>
-            {isOpen && <div className='px-6 py-4 bg-white text-gray-700'>{content}</div>}
+
+            <div
+                ref={contentRef}
+                className={`px-6 overflow-hidden bg-white text-gray-700 transition-all duration-500 ease-in-out`}
+                style={{
+                    maxHeight: isOpen ? `${contentRef.current?.scrollHeight}px` : '0px',
+                    opacity: isOpen ? 1 : 0,
+                }}
+            >
+                <div className='py-4'>{content}</div>
+            </div>
         </div>
     );
 };
@@ -74,7 +85,7 @@ const ServiceQandA = () => {
     ];
 
     return (
-        <div class='flex flex-col'>
+        <div className='flex flex-col'>
             {data.map((item, index) => (
                 <QandAitem key={index} {...item} />
             ))}
