@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { MoveRight } from 'lucide-react';
 const pricingPlans = [
@@ -102,13 +103,7 @@ export default function GradientPricingSection() {
                                     ))}
                                 </ul>
 
-                                <button
-                                    className={`w-full py-3 px-6 flex justify-center items-center gap-2 cursor-pointer rounded-full font-medium transition-colors duration-200 bg-primary-700 hover:bg-primary-600 text-white border border-primary-600 ${
-                                        selectedPlan === plan.id
-                                            ? 'ring-2 ring-offset-2 ring-primary-500'
-                                            : ''
-                                    }`}
-                                >
+                                <button className='w-full py-3 px-6 flex justify-center items-center gap-2 cursor-pointer rounded-full font-medium transition-colors duration-200 bg-primary-700 hover:bg-secondary-600 text-white '>
                                     <span> Subscribe Now</span> <MoveRight />
                                 </button>
                             </div>

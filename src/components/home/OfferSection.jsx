@@ -7,6 +7,7 @@ import offer2 from '@/assets/offer2.jpg';
 import offer3 from '@/assets/offer3.jpg';
 import offer4 from '@/assets/offer4.png';
 import offer5 from '@/assets/offer5.jpeg';
+import { MoveUpRight } from 'lucide-react';
 function OfferSection() {
     const tiles = [
         {
@@ -81,11 +82,8 @@ function OfferSection() {
                                     </p>
                                 </div>
 
-                                <div className='px-2 py-0.5 bg-white rounded-full'>
-                                    <FontAwesomeIcon
-                                        icon={faArrowRight}
-                                        className='text-black h-4 w-4'
-                                    />
+                                <div className='px-2 py-2 bg-white rounded-full'>
+                                    <MoveUpRight size={20} />
                                 </div>
                             </div>
                         </div>
