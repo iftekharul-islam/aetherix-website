@@ -26,7 +26,7 @@ function BlogList({ blogData }) {
                     <p className='text-sm text-[#475569] mb-4'>
                         For our July 2023 Employee Spotlight, Stewart Erickson...
                     </p>
-                    <Link href='/blog/test' className='text-sm font-semibold text-[#002a57]'>
+                    <Link href={blog.link} className='text-sm font-semibold text-[#002a57]'>
                         Read More
                     </Link>
                 </div>
