@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Play, Leaf } from 'lucide-react';
+import { Play, Leaf, X } from 'lucide-react';
 
 const CircularImageSection = ({ youtubeVideoId, image1, image2 }) => {
     const [isVideoOpen, setIsVideoOpen] = useState(false);
