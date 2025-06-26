@@ -11,13 +11,6 @@ const About = () => {
 
     return (
         <>
-            <section className='bg-gradient-to-br from-[#002a57] to-[#0097b2] text-white py-10 md:py-30'>
-                <div className='container px-4'>
-                    <h1 className='text-3xl md:text-4xl font-bold mb-2'>About Us</h1>
-                    <p className='text-sm text-white/80'>Home / About Us</p>
-                </div>
-            </section>
-
             <section className='pb-10 md:pb-20 container'>
                 <div className='flex flex-col lg:flex-row gap-6 lg:gap-8 items-center'>
                     {/* Images Container - Maintains layout on all screen sizes */}
