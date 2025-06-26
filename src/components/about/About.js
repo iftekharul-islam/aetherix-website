@@ -18,7 +18,7 @@ const About = () => {
                 </div>
             </section>
 
-            <section className='py-10 md:py-20 container'>
+            <section className='pb-10 md:pb-20 container'>
                 <div className='flex flex-col lg:flex-row gap-6 lg:gap-8 items-center'>
                     {/* Images Container - Maintains layout on all screen sizes */}
                     <CircularImageSection
