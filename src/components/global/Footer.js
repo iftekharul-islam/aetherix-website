@@ -4,8 +4,25 @@ const Footer = () => {
     return (
         <footer>
             <div className='bg-[#00b3c8] text-white text-sm py-3 text-center'>
-                info@global.com &nbsp; • &nbsp; +01 123 456 789 &nbsp; • &nbsp; Network, United
-                States &nbsp; • &nbsp; info@global.com &nbsp; • &nbsp; +01 123 456 789
+                <div className='marquee-container'>
+                    <div className='marquee-track flex gap-4 items-center'>
+                        <span>
+                            info@global.com &nbsp; • &nbsp; +01 123 456 789 &nbsp; • &nbsp; Network,
+                            United States &nbsp; • &nbsp; info@global.com &nbsp; • &nbsp; +01 123
+                            456 789
+                        </span>
+                        <span className='px-20'>
+                            info@global.com &nbsp; • &nbsp; +01 123 456 789 &nbsp; • &nbsp; Network,
+                            United States &nbsp; • &nbsp; info@global.com &nbsp; • &nbsp; +01 123
+                            456 789
+                        </span>
+                        <span>
+                            info@global.com &nbsp; • &nbsp; +01 123 456 789 &nbsp; • &nbsp; Network,
+                            United States &nbsp; • &nbsp; info@global.com &nbsp; • &nbsp; +01 123
+                            456 789
+                        </span>
+                    </div>
+                </div>
             </div>
 
             <div className='bg-[#002a57] text-white text-sm pt-12 pb-6'>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+
 function FeaturesServiceSection() {
     const items = [
         'FPS Global',
@@ -15,16 +16,20 @@ function FeaturesServiceSection() {
         'Qualified Global Team',
         'FPS Global',
     ];
-    const repeatedItems = [...items, ...items, ...items]; // Repeat for seamless loop
+
+    const repeatedItems = [...items, ...items, ...items]; // For seamless scrolling
 
     return (
-        <div className='bg-[#00b3c8] py-8 overflow-hidden'>
+        <div className='bg-[#00b3c8] py-4 overflow-hidden'>
             <div className='marquee-container'>
-                <div className='marquee-track'>
-                    {[...items, ...items, ...items].map((text, index) => (
-                        <span className='marquee-item text-white text-lg font-bold' key={index}>
-                            <FontAwesomeIcon icon={faStar} className='w-4 h-4' /> {text}
-                        </span>
+                <div className='marquee-track flex gap-4 items-center'>
+                    {repeatedItems.map((text, index) => (
+                        <React.Fragment key={index}>
+                            <span className='marquee-item text-white text-2xl font-bold'>
+                                {text}
+                            </span>
+                            <FontAwesomeIcon icon={faStar} className='text-white w-4 h-4' />
+                        </React.Fragment>
                     ))}
                 </div>
             </div>
