@@ -88,13 +88,6 @@ const Blogs = () => {
     };
     return (
         <>
-            <section className='bg-gradient-to-br from-[#002a57] to-[#0097b2] text-white py-10 md:py-30'>
-                <div className='container'>
-                    <h1 className='text-4xl font-bold mb-2'>Blog</h1>
-                    <p className='text-sm text-white/80'>Home / Blog</p>
-                </div>
-            </section>
-
             <section className='py-20 container'>
                 <div className='flex flex-col md:flex-row gap-8'>
                     <div className='md:w-1/2 flex flex-col'>

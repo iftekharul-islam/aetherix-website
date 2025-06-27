@@ -2,11 +2,9 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Play, Leaf } from 'lucide-react';
-import offer1 from '@/assets/offer1.jpg';
-import offer2 from '@/assets/offer2.jpg';
+import { Play, Leaf, X } from 'lucide-react';
 
-const CircularImageSection = ({ youtubeVideoId }) => {
+const CircularImageSection = ({ youtubeVideoId, image1, image2 }) => {
     const [isVideoOpen, setIsVideoOpen] = useState(false);
 
     const handlePlayClick = () => {
@@ -24,7 +22,7 @@ const CircularImageSection = ({ youtubeVideoId }) => {
                     {/* First Image */}
                     <div className='relative w-32 h-40 sm:w-40 sm:h-52 md:w-52 md:h-64 lg:w-60 lg:h-80 rounded-lg overflow-hidden shadow-md -mt-4 sm:-mt-6 md:-mt-10'>
                         <Image
-                            src={offer1}
+                            src={image1}
                             alt='Offer 1'
                             fill
                             className='object-cover brightness-65'
@@ -39,7 +37,7 @@ const CircularImageSection = ({ youtubeVideoId }) => {
 
                         <div className='w-32 h-40 sm:w-40 sm:h-52 md:w-52 md:h-64 lg:w-60 lg:h-80 relative rounded-lg overflow-hidden shadow-md'>
                             <Image
-                                src={offer2}
+                                src={image2}
                                 alt='Offer 2'
                                 fill
                                 className='object-cover brightness-65'

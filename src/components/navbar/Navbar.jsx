@@ -14,187 +14,157 @@ const Navbar = ({ isHomePage }) => {
     const dropdownRef = useRef(null);
     const pathname = usePathname();
 
+    // Handle click outside dropdown
     const handleClickOutside = (event) => {
         if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
             setIsServicesOpen(false);
         }
     };
 
+    // Handle scroll effect
     const handleScroll = () => {
-        if (window.scrollY > 0) {
-            setIsScrolled(true);
-        } else {
-            setIsScrolled(false);
-        }
+        setIsScrolled(window.scrollY > 0);
     };
 
+    // Set up event listeners
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-        if (isServicesOpen) document.addEventListener('mousedown', handleClickOutside);
+        if (isServicesOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
         return () => {
             window.removeEventListener('scroll', handleScroll);
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [isServicesOpen]);
 
+    // Check if path is active
     const isActive = (path) => {
-        return pathname === path
-            ? 'text-tsRed font-bold'
-            : isScrolled || !isHomePage
-            ? 'text-tsBlack hover:text-tsRed'
-            : 'text-white hover:text-tsRed';
+        return pathname === path;
     };
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
+    // Close mobile menu on route change
     useEffect(() => {
         setIsMenuOpen(false);
     }, [pathname]);
+
+    // Navbar links data
+    const navLinks = [
+        { path: '/', label: 'Home' },
+        { path: '/services', label: 'Services' },
+        { path: '/blogs', label: 'Blog' },
+        { path: '/about', label: 'About' },
+        { path: '/contact', label: 'Contact' },
+    ];
+
     return (
         <nav
-            className={`transition-all duration-300 ease-in-out w-full sticky md:fixed top-0 z-[999] ${
+            className={`fixed w-full top-0 z-[999] transition-all duration-500 ease-out ${
                 isHomePage
                     ? isScrolled
-                        ? 'bg-[#002a57] shadow-md text-white'
-                        : 'bg-transparent '
-                    : 'bg-[#002a57] shadow-md text-white'
+                        ? 'bg-[#002a57] shadow-lg backdrop-blur-sm bg-opacity-90'
+                        : 'bg-transparent'
+                    : 'bg-[#002a57] shadow-lg'
             }`}
         >
-            <div
-                className={`transition-all duration-300 ease-in-out container ${
-                    isScrolled ? 'py-[10px] ' : 'py-[10px] '
-                }`}
-            >
-                <div className='flex items-center justify-between h-16 '>
-                    <div className='hidden md:flex justify-start'>
-                        <Logo />
-                    </div>
-                    <div className='md:hidden'>
-                        <MobileLogo />
+            <div className='container'>
+                <div className='flex items-center justify-between h-16 md:h-20'>
+                    {/* Logo */}
+                    <div className='flex-shrink-0'>
+                        <div className='hidden md:block'>
+                            <Logo />
+                        </div>
+                        <div className='md:hidden'>
+                            <MobileLogo />
+                        </div>
                     </div>
 
-                    {/* Desktop Menu */}
-                    <div className='hidden md:flex items-center space-x-6'>
-                        <Link href='/' className={`${isActive('/')} px-3 py-2 uppercase`}>
-                            Home
-                        </Link>
-                        <Link
-                            href='/services'
-                            className={`${isActive('/services')} px-3 py-2 uppercase`}
-                        >
-                            Services
-                        </Link>
-                        <Link href='/blogs' className={`${isActive('/blog')} px-3 py-2 uppercase`}>
-                            Blog
-                        </Link>
-                        <Link href='/about' className={`${isActive('/about')} px-3 py-2 uppercase`}>
-                            About
-                        </Link>
-                        <Link
-                            href='/contact'
-                            className={`${isActive('/contact')} px-3 py-2 uppercase`}
-                        >
-                            Contact
-                        </Link>
+                    {/* Desktop Navigation */}
+                    <div className='hidden md:flex items-center space-x-1'>
+                        {navLinks.map((link) => {
+                            const active = isActive(link.path);
+                            const baseColor =
+                                isScrolled || !isHomePage ? 'text-gray-200' : 'text-white';
+                            const hoverColor = 'text-white';
+
+                            return (
+                                <Link
+                                    key={link.path}
+                                    href={link.path}
+                                    className={`group relative px-4 py-2 text-sm uppercase tracking-wider font-medium ${
+                                        active ? 'text-white' : `${baseColor} hover:${hoverColor}`
+                                    } transition-colors duration-300`}
+                                >
+                                    {link.label}
+                                    <span
+                                        className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-white transition-all duration-300 ${
+                                            active ? 'w-full' : 'w-0 group-hover:w-full'
+                                        }`}
+                                    ></span>
+                                </Link>
+                            );
+                        })}
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <button
-                        className='md:hidden focus:outline-none'
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                        <svg
-                            className='w-6 h-6'
-                            fill='none'
-                            stroke='currentColor'
-                            viewBox='0 0 24 24'
+                    <div className='md:hidden'>
+                        <button
+                            className='p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white'
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            aria-label='Toggle menu'
                         >
-                            <path
-                                strokeLinecap='round'
-                                strokeLinejoin='round'
-                                strokeWidth='2'
-                                d='M4 6h16M4 12h16M4 18h16'
-                            />
-                        </svg>
-                    </button>
+                            <svg className='w-6 h-6' fill='none' stroke='white' viewBox='0 0 24 24'>
+                                {isMenuOpen ? (
+                                    <path
+                                        strokeLinecap='round'
+                                        strokeLinejoin='round'
+                                        strokeWidth={2}
+                                        d='M6 18L18 6M6 6l12 12'
+                                    />
+                                ) : (
+                                    <path
+                                        strokeLinecap='round'
+                                        strokeLinejoin='round'
+                                        strokeWidth={2}
+                                        d='M4 6h16M4 12h16M4 18h16'
+                                    />
+                                )}
+                            </svg>
+                        </button>
+                    </div>
                 </div>
 
-                {/* Mobile Menu (overlayed) */}
-                {isMenuOpen && (
-                    <div className='md:hidden absolute top-full left-0 w-full bg-white shadow-lg z-50 rounded-b-lg py-2'>
-                        <Link
-                            href='/'
-                            className='block px-4 py-2 hover:bg-gray-100'
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Home
-                        </Link>
-                        <div className='px-4 py-2'>
-                            <button
-                                className='flex items-center w-full hover:bg-gray-100 px-2 py-1 rounded'
-                                onClick={() => setIsServicesOpen(!isServicesOpen)}
-                            >
-                                Services
-                                <FontAwesomeIcon
-                                    icon={faCaretDown}
-                                    className={`ml-2 transition-transform ${
-                                        isServicesOpen ? 'rotate-180' : ''
+                {/* Mobile Menu */}
+                <div
+                    className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+                        isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                >
+                    <div className='px-2 pt-2 pb-4 space-y-1 bg-white rounded-lg shadow-xl mt-2'>
+                        {navLinks.map((link) => {
+                            const active = isActive(link.path);
+                            return (
+                                <Link
+                                    key={link.path}
+                                    href={link.path}
+                                    className={`group block px-3 py-2 rounded-md text-base font-medium relative overflow-hidden ${
+                                        active
+                                            ? 'bg-gray-100 text-gray-900'
+                                            : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
                                     }`}
-                                />
-                            </button>
-                            {isServicesOpen && (
-                                <div className='pl-4 mt-1'>
-                                    <Link
-                                        href='/services/service1'
-                                        className='block px-2 py-1 hover:bg-gray-100 rounded'
-                                        onClick={() => {
-                                            setIsServicesOpen(false);
-                                            setIsMenuOpen(false);
-                                        }}
-                                    >
-                                        Service 1
-                                    </Link>
-                                    <Link
-                                        href='/services/service2'
-                                        className='block px-2 py-1 hover:bg-gray-100 rounded'
-                                        onClick={() => {
-                                            setIsServicesOpen(false);
-                                            setIsMenuOpen(false);
-                                        }}
-                                    >
-                                        Service 2
-                                    </Link>
-                                </div>
-                            )}
-                        </div>
-                        <Link
-                            href='/blogs'
-                            className='block px-4 py-2 hover:bg-gray-100'
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Blog
-                        </Link>
-                        <Link
-                            href='/about'
-                            className='block px-4 py-2 hover:bg-gray-100'
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            About
-                        </Link>
-                        <Link
-                            href='/contact'
-                            className='block px-4 py-2 hover:bg-gray-100'
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Contact
-                        </Link>
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    {link.label}
+                                    <span
+                                        className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gray-900 transition-all duration-300 ${
+                                            active ? 'w-full' : 'w-0 group-hover:w-full'
+                                        }`}
+                                    ></span>
+                                </Link>
+                            );
+                        })}
                     </div>
-                )}
+                </div>
             </div>
         </nav>
     );

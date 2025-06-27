@@ -12,6 +12,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Pricing from '@/components/global/Pricing';
 import ServiceQandA from '@/components/services/ServiceQandA';
 import Newsletter from '@/components/global/NewsLetter';
+import HeaderSection from '@/components/global/HeaderSecton';
 
 const services = [
     {
@@ -265,12 +266,7 @@ function Page() {
     return (
         <>
             <SEO seo={servicespage} />
-            <section className='bg-gradient-to-br from-[#002a57] to-[#0097b2] text-white py-10 md:py-30'>
-                <div className='container'>
-                    <h1 className='text-4xl font-bold mb-2'>{service.title}</h1>
-                    <p className='text-sm text-white/80'>Home | Services | {service.title}</p>
-                </div>
-            </section>
+            <HeaderSection />
             <div className='container  mb-10'>
                 <div className='flex flex-col lg:flex-row items-center gap-8 lg:gap-12 py-12'>
                     <div className='w-full lg:w-1/2'>
