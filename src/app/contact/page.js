@@ -1,4 +1,5 @@
 import Contact from '@/components/contact/Contact';
+import HeaderSection from '@/components/global/HeaderSecton';
 import SEO from '@/components/global/SEO';
 import contactpage from '@/seo/contactpage';
 
@@ -7,8 +8,9 @@ const index = () => {
     return (
         <>
             <SEO seo={seo} />
+            <HeaderSection />
             <Contact />
         </>
     );
-}
+};
 export default index;

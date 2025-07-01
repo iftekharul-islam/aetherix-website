@@ -84,6 +84,40 @@ const services = [
         },
     },
     {
+        slug: 'business-management',
+        title: 'Business Management',
+        description:
+            'Advanced financial tools to optimize your accounting, budgeting, and financial reporting.',
+        longDescription: [
+            'Our Finance Management services provide comprehensive solutions for all your financial operations. We offer tools for accounting, budgeting, financial reporting, and analysis that give you complete visibility into your financial health.',
+            'We implement systems that automate financial processes, reduce errors, and provide real-time insights into your cash flow, expenses, and revenue. Our solutions help you make data-driven financial decisions and maintain compliance with accounting standards.',
+            'From small businesses to large enterprises, our financial management services scale with your needs, providing the right level of sophistication and automation for your organization.',
+        ],
+        features: [
+            'General ledger accounting',
+            'Accounts payable/receivable',
+            'Budgeting and forecasting',
+            'Financial reporting',
+            'Tax compliance',
+            'Cash flow management',
+        ],
+        technologies: ['QuickBooks', 'Xero', 'Sage', 'NetSuite', 'FreshBooks', 'Zoho Books'],
+        image: DemoImage,
+        stats: [
+            { value: '40%', label: 'Faster Reporting' },
+            { value: '99%', label: 'Accuracy Rate' },
+            { value: '25%', label: 'Cost Savings' },
+        ],
+        sectionTitles: {
+            left: 'Control Your Finances',
+            right: 'Gain Real-Time Insights',
+        },
+        detailedText: {
+            left: 'Automate your accounting, track cash flow, and stay compliant with financial regulations through our smart finance tools.',
+            right: 'Access up-to-date reports and dashboards that provide a clear picture of your business’s financial health and profitability.',
+        },
+    },
+    {
         slug: 'data-management',
         title: 'Data Management',
         description:
