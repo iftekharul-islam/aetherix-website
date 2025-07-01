@@ -174,7 +174,7 @@ body {
 /* styles/globals.css */
 .custom-scrollbar {
     scrollbar-width: thin;
-    scrollbar-color: #4f46e5 #1e293b;
+    scrollbar-color: #002a57 #1e293b;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -186,7 +186,7 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #4f46e5;
+    background-color: #002a57;
     border-radius: 20px;
 }
 /* end portfolio FlipCard Section start */
