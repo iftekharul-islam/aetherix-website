@@ -91,29 +91,25 @@ function ServiceCategory() {
                         key={tile.id}
                         className={`relative rounded-xl overflow-hidden h-[280px] block ${
                             tile.span === 2 ? 'sm:col-span-2' : ''
-                        }`}
+                        } group`} // Fixed: Added space before 'group'
                     >
-                        <div className='h-full'>
-                            <Image
-                                src={tile.image}
-                                alt={tile.title}
-                                className='w-full h-full object-cover'
-                                width={400}
-                                height={280}
-                            />
-                            <div className='absolute bottom-4 left-4 right-4'>
-                                <div className='w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-4 py-3 flex items-center justify-between'>
-                                    <div className='flex flex-col gap-1'>
-                                        <p className='text-white font-semibold text-sm'>
-                                            {tile.title}
-                                        </p>
-                                        <p className='text-white font-semibold text-sm'>
-                                            {tile.category}
-                                        </p>
-                                    </div>
-                                    <div className='px-2 py-2 bg-white rounded-full'>
-                                        <MoveUpRight size={20} />
-                                    </div>
+                        <Image
+                            src={tile.image}
+                            alt={tile.title}
+                            className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 brightness-75'
+                            width={400}
+                            height={280}
+                        />
+                        <div className='absolute bottom-4 left-4 right-4'>
+                            <div className='w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-4 py-3 flex items-center justify-between transition-all duration-300 hover:bg-white/20 hover:border-white/30 hover:shadow-lg hover:shadow-white/10'>
+                                <div className='flex flex-col gap-1'>
+                                    <p className='text-white font-semibold text-sm'>{tile.title}</p>
+                                    <p className='text-white font-semibold text-sm'>
+                                        {tile.category}
+                                    </p>
+                                </div>
+                                <div className='px-2 py-2 bg-white rounded-full transition-transform duration-300 group-hover:rotate-45'>
+                                    <MoveUpRight size={20} />
                                 </div>
                             </div>
                         </div>
@@ -122,11 +118,12 @@ function ServiceCategory() {
             </div>
 
             <div className='text-center mt-10'>
-                <Link href='/services'>
-                    <button className='px-6 py-3 rounded-full border text-white bg-[#002a57] font-normal flex items-center gap-2 mx-auto'>
-                        View All
-                        <FontAwesomeIcon icon={faArrowRight} className='w-4 h-4' />
-                    </button>
+                <Link
+                    href='/services'
+                    className='px-6 py-3 rounded-full border text-white bg-[#002a57] font-normal flex items-center gap-2 mx-auto w-fit'
+                >
+                    View All
+                    <FontAwesomeIcon icon={faArrowRight} className='w-4 h-4' />
                 </Link>
             </div>
         </section>

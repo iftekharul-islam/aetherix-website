@@ -14,10 +14,10 @@ const Home = () => {
             <HeroSection />
             <OfferSection />
             <FeaturesServiceSection />
+            <GlobalSection />
             <PortFolioSection />
-            <ServiceSection/>
+            <ServiceSection />
             <ClientSection />
-            {/*    <GlobalSection /> */}
             <CustomerFeedbackSection />
             <LatestNewsSection />
         </>
