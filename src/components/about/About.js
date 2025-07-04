@@ -7,7 +7,7 @@ import offer4 from '@/assets/offer4.png';
 import offer5 from '@/assets/offer5.jpeg';
 import offer6 from '@/assets/offer6.jpeg';
 const About = () => {
-    const youtubeVideoId = 'sUf2PtEZris';
+    const youtubeVideoId = 'Hu4Yvq-g7_Y';
 
     return (
         <>

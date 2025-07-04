@@ -89,6 +89,7 @@ const Blogs = () => {
     return (
         <>
             <section className='py-20 container'>
+                <h2 className='text-2xl font-bold mb-10'>Featured Blogs</h2>
                 <div className='flex flex-col md:flex-row gap-8'>
                     <div className='md:w-1/2 flex flex-col'>
                         <div className='bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow flex-1 flex flex-col'>
@@ -165,7 +166,7 @@ const Blogs = () => {
             </section>
 
             <section className='pb-20 container'>
-                <h2 className='text-2xl font-bold mb-10'>Featured Blogs</h2>
+                <h2 className='text-2xl font-bold mb-10'>All Blogs</h2>
                 <BlogList blogData={blogData} />
             </section>
         </>

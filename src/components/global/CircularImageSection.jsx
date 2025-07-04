@@ -17,7 +17,15 @@ const CircularImageSection = ({ youtubeVideoId, image1, image2 }) => {
 
     return (
         <>
-            <div className=' py-4 px-4 sm:py-6 sm:px-8 rounded-2xl flex-shrink-0'>
+            <div className='relative  px-4 mt-20 sm:px-8 rounded-2xl flex-shrink-0'>
+                {/* Background with 2/3 red section */}
+                <div className='absolute inset-0 -z-10'>
+                    <div className='w-full h-full rounded-2xl overflow-hidden'>
+                        <div className='h-2/3 w-full bg-gray-100 rounded-2xl'></div>
+                        <div className='h-1/3 w-full bg-white'></div>
+                    </div>
+                </div>
+
                 <div className='relative flex flex-row justify-center items-center md:items-end gap-3 sm:gap-4 md:gap-6 pb-16 sm:pb-20 md:pb-28 lg:pb-20'>
                     {/* First Image */}
                     <div className='relative w-32 h-40 sm:w-40 sm:h-52 md:w-52 md:h-64 lg:w-60 lg:h-80 rounded-lg overflow-hidden shadow-md -mt-4 sm:-mt-6 md:-mt-10'>

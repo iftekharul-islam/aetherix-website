@@ -95,27 +95,27 @@ body {
     pointer-events: none;
 }
 
-/* Keyframes for corner movement */
+/* Fixed keyframes for corner movement  */
 @keyframes moveCornerToCorner {
     0% {
-        top: -150px;
-        left: -150px;
+        top: -250px;
+        left: -250px;
     }
     25% {
-        top: -150px;
-        left: calc(100% - 150px);
+        top: -250px;
+        left: calc(100% - 250px);
     }
     50% {
-        top: calc(100% - 150px);
-        left: calc(100% - 150px);
+        top: calc(100% - 250px);
+        left: calc(100% - 250px);
     }
     75% {
-        top: calc(100% - 150px);
-        left: -150px;
+        top: calc(100% - 250px);
+        left: -250px;
     }
     100% {
-        top: -150px;
-        left: -150px;
+        top: -250px;
+        left: -250px;
     }
 }
 
@@ -174,7 +174,7 @@ body {
 /* styles/globals.css */
 .custom-scrollbar {
     scrollbar-width: thin;
-    scrollbar-color: #4f46e5 #1e293b;
+    scrollbar-color: #002a57 #1e293b;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -186,7 +186,7 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #4f46e5;
+    background-color: #002a57;
     border-radius: 20px;
 }
 /* end portfolio FlipCard Section start */
