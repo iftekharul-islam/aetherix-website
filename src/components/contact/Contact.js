@@ -14,7 +14,7 @@ import {
 const Contact = () => {
     return (
         <>
-            <section className='px-4 md:px-10 lg:px-20 py-10 lg:py-20 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20'>
+            <section className='container py-10 lg:py-20 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20'>
                 <div>
                     <h2 className='text-2xl font-bold text-black mb-4'>Contact Us</h2>
                     <p className='text-gray-600 text-sm mb-8'>
@@ -165,7 +165,7 @@ const Contact = () => {
                 </div>
             </section>
 
-            <section className='px-4 md:px-10 lg:px-20 pb-10 lg:pb-20'>
+            <section className='container pb-10 lg:pb-20'>
                 <iframe
                     src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.4541797985185!2d90.37280327419266!3d23.83800078540981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c6b4dace62ed%3A0xc742e878029e533b!2sMirpur%20DOHS%20Shopping%20Complex!5e0!3m2!1sen!2sbd!4v1751044076317!5m2!1sen!2sbd'
                     width='100%'
