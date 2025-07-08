@@ -51,7 +51,7 @@ const portfolioData = {
     ],
 };
 
-export default function HomePage() {
+export default function PortFolioPage() {
     const [activeTab, setActiveTab] = useState('Tab1');
 
     const renderTabContent = () => {
