@@ -51,7 +51,7 @@ const CustomerFeedbackSection = () => {
     ];
 
     return (
-        <div className='relative bg-white py-24 container overflow-hidden'>
+        <div className='relative bg-white py-10 md:py-20 container overflow-hidden'>
             {/* Subtle animated dots */}
             <div className='absolute inset-0 overflow-hidden opacity-5'>
                 {[...Array(30)].map((_, i) => (

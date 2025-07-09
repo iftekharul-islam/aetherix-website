@@ -23,48 +23,46 @@ const clients = [
 
 function ClientSection() {
     return (
-        <section className='py-20 bg-white text-center contaner'>
-            <div className='container mx-auto px-4'>
-                <h3 className='text-xl font-semibold mb-6'>Our Clients</h3>
+        <section className='pt-20 bg-white text-center container'>
+            <h3 className='text-xl font-semibold mb-6'>Our Clients</h3>
 
-                <div className='relative pb-10'>
-                    {' '}
-                    {/* Add padding-bottom for spacing below slider */}
-                    <Swiper
-                        modules={[Autoplay, Pagination, Navigation]}
-                        spaceBetween={20}
-                        loop={true}
-                        autoplay={{
-                            delay: 2500,
-                            disableOnInteraction: false,
-                        }}
-                        pagination={{
-                            clickable: true,
-                            el: '.swiper-pagination-clients',
-                        }}
-                        navigation={true}
-                        breakpoints={{
-                            320: { slidesPerView: 2 },
-                            640: { slidesPerView: 3 },
-                            768: { slidesPerView: 4 },
-                            1024: { slidesPerView: 5 },
-                            1280: { slidesPerView: 6 },
-                        }}
-                        className='grayscale '
-                    >
-                        {clients.map((client, index) => (
-                            <SwiperSlide key={index}>
-                                <img
-                                    src={client.src}
-                                    alt={client.name}
-                                    className='mx-auto w-full h-auto object-contain'
-                                />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                    {/* Move pagination here */}
-                    <div className='swiper-pagination-clients mt-4 flex justify-center' />
-                </div>
+            <div className='relative pb-10'>
+                {' '}
+                {/* Add padding-bottom for spacing below slider */}
+                <Swiper
+                    modules={[Autoplay, Pagination, Navigation]}
+                    spaceBetween={20}
+                    loop={true}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    pagination={{
+                        clickable: true,
+                        el: '.swiper-pagination-clients',
+                    }}
+                    navigation={true}
+                    breakpoints={{
+                        320: { slidesPerView: 2 },
+                        640: { slidesPerView: 3 },
+                        768: { slidesPerView: 4 },
+                        1024: { slidesPerView: 5 },
+                        1280: { slidesPerView: 6 },
+                    }}
+                    className='grayscale '
+                >
+                    {clients.map((client, index) => (
+                        <SwiperSlide key={index}>
+                            <img
+                                src={client.src}
+                                alt={client.name}
+                                className='mx-auto w-full h-auto object-contain'
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+                {/* Move pagination here */}
+                <div className='swiper-pagination-clients mt-4 flex justify-center' />
             </div>
         </section>
     );
