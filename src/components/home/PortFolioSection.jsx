@@ -141,8 +141,8 @@ export default function PortFolioPage() {
     };
 
     return (
-        <div className='container py-12'>
-            <div className='flex justify-center items-center flex-col flex-wrap gap-4 pb-6'>
+        <div className='container py-10 md:py-20'>
+            {/* <div className='flex justify-center items-center flex-col flex-wrap gap-4 pb-6'>
                 <div className='px-3 py-1 bg-secondary/75 rounded-full text-white text-sm font-light'>
                     Our Portfolio
                 </div>
@@ -153,6 +153,18 @@ export default function PortFolioPage() {
                 </div>
 
                 <div className='text-center text-gray-600 text-lg max-w-2xl'>
+                    Explore our portfolio of cutting-edge software solutions that have helped
+                    businesses increase efficiency by 40%, boost revenue by 35%, and enhance
+                    customer satisfaction. Each project represents our commitment to innovation and
+                    measurable results.
+                </div>
+            </div> */}
+            <div className='flex justify-between items-center gap-2 flex-wrap pb-6'>
+                <div>
+                    <p className='text-xs text-[#9ca3af] uppercase font-semibold'>Portfolio</p>
+                    <h2 className='text-3xl font-bold mb-2'>Our Portfolio</h2>
+                </div>
+                <div className='text-[#475569] max-w-2xl'>
                     Explore our portfolio of cutting-edge software solutions that have helped
                     businesses increase efficiency by 40%, boost revenue by 35%, and enhance
                     customer satisfaction. Each project represents our commitment to innovation and

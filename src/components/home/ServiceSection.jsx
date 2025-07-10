@@ -7,7 +7,7 @@ import ServiceCategory from '../services/ServiceCategory';
 function ServiceSection() {
     return (
         <div className='container'>
-            <div className='flex justify-center items-center flex-col flex-wrap gap-4'>
+            {/*   <div className='flex justify-center items-center flex-col flex-wrap gap-4'>
                 <div className='px-3 py-1 bg-secondary/75 rounded-full text-white text-sm font-light'>
                     Our Services
                 </div>
@@ -19,8 +19,17 @@ function ServiceSection() {
                     Innovative technology solutions tailored to your business challenges and growth
                     objectives
                 </div>
+            </div> */}
+            <div className='flex justify-between items-center gap-2 flex-wrap pb-6'>
+                <div>
+                    <p className='text-xs text-[#9ca3af] uppercase font-semibold'>Portfolio</p>
+                    <h2 className='text-3xl font-bold mb-2'>Our Services</h2>
+                </div>
+                <div className='text-[#475569] max-w-2xl'>
+                    Innovative technology solutions tailored to your business challenges and growth
+                    objectives
+                </div>
             </div>
-
             <ServiceCategory />
             <div className='flex justify-end items-center mt-10'>
                 <Link
