@@ -1,33 +1,30 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import Image from 'next/image';
 import team1 from '@/assets/team1.jpeg';
 import team2 from '@/assets/team2.jpeg';
 import team3 from '@/assets/team3.jpg';
 import team4 from '@/assets/team4.jpg';
+import Image from 'next/image';
 
 function Team() {
     const teamMembers = [
         {
             id: 1,
-            name: 'John Smith',
-            designation: 'CEO & Founder',
+            name: 'ASM Iftekharul Islam',
+            designation: 'CEO',
             department: 'Executive',
             image: team1,
         },
         {
             id: 2,
-            name: 'Sarah Johnson',
+            name: 'Md. Imrul Afnan',
             designation: 'CTO',
             department: 'Technology',
             image: team2,
         },
         {
             id: 3,
-            name: 'Michael Chen',
-            designation: 'CFO',
-            department: 'Finance',
+            name: 'Noor e Alam',
+            designation: 'Developer',
+            department: 'Technology',
             image: team3,
         },
         {

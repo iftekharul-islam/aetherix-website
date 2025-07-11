@@ -1,10 +1,8 @@
 'use client';
-import { motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import DemoImage from '@/assets/demoimage.jpeg';
-import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 import RightContent from './HeroImageSection';
 
 const Bubble = ({ size, left, delay, duration }) => {
@@ -77,7 +75,7 @@ function HeroSection() {
                         variants={fadeInUp}
                     >
                         <div className='h-0.5 w-8 bg-[#d1d5db] rounded-full'></div>
-                        <div className='text-sm text-[#d1d5db] font-bold'>Expert Consulting</div>
+                        <div className='text-sm text-[#d1d5db] font-bold'>SOFTWARE & MARKETING EXPERTS</div>
                         <div className='h-0.5 w-8 bg-[#d1d5db] rounded-full'></div>
                     </motion.div>
 
@@ -85,27 +83,25 @@ function HeroSection() {
                         className='text-3xl sm:text-4xl md:text-5xl font-bold leading-tight'
                         variants={fadeInUp}
                     >
-                        Reliably Guiding Your <br />
+                    Transforming Your <br />
                         <span className='bg-[#00e0d0] rounded-xl px-2 py-1 inline-block mt-2'>
-                            Business
+                            Vision
                         </span>{' '}
-                        to Success
+                        into Scalable Digital Solutions
                     </motion.h1>
 
                     <motion.p className='text-sm sm:text-base text-white/80' variants={fadeInUp}>
-                        Our highly qualified global team is uniquely qualified to deliver
-                        high-performance sustainable landmark buildings through our integrated
-                        suite.
+                        Our dedicated team of software engineers and digital marketers partners with you to build robust applications, craft data-driven campaigns, and accelerate growth across every channel.
                     </motion.p>
 
                     <motion.div
                         className='flex justify-center lg:justify-start'
                         variants={fadeInUp}
                     >
-                        <button className='bg-white text-[#002a57] px-6 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-gray-100 transition-colors'>
+                        <Link className='bg-white text-[#002a57] px-6 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-gray-100 transition-colors' href="/contact">
                             Contact Us
                             <FontAwesomeIcon icon={faArrowRight} className='w-4 h-4' />
-                        </button>
+                        </Link>
                     </motion.div>
                 </motion.div>
 

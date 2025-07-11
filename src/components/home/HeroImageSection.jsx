@@ -1,10 +1,9 @@
 'use client';
-import { motion, useInView, animate } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import DemoImage from '@/assets/tsimage.png';
-import IconImage from '@/assets/ideaicon.png';
 import DemoImage2 from '@/assets/tsimage2.png';
+import { animate, motion, useInView } from 'framer-motion';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 const RightSection = () => {
     const countRef = useRef(null);
     const isInView = useInView(countRef, { once: true });
@@ -13,7 +12,7 @@ const RightSection = () => {
     useEffect(() => {
         if (!isInView) return;
 
-        const controls = animate(0, 547, {
+        const controls = animate(0, 50, {
             duration: 3,
             onUpdate(value) {
                 setDisplayCount(Math.floor(value));
@@ -57,12 +56,10 @@ const RightSection = () => {
                     <div className='absolute bottom-0 left-0 right-0  p-4'>
                         <div className=' bg-white p-4 rounded-2xl'>
                             <div className='text-primary text-lg font-bold '>
-                                {' '}
-                                Consulting Services
+                                Software Crafting
                             </div>
                             <div className='text-black text-sm font-medium '>
-                                {' '}
-                                Immediate Consulting Services{' '}
+                                30+ Certified Expert Developers
                             </div>
                         </div>
                     </div>

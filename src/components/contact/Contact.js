@@ -1,15 +1,14 @@
-import Link from 'next/link';
 import {
-    X,
     Facebook,
-    Twitter,
     Instagram,
     Linkedin,
-    MoveRight,
     Mail,
-    Phone,
     MapPin,
+    MoveRight,
+    Phone,
+    X
 } from 'lucide-react';
+import Link from 'next/link';
 
 const Contact = () => {
     return (
@@ -108,22 +107,39 @@ const Contact = () => {
                     <div>
                         <h3 className='text-lg font-semibold mb-2 uppercase'>Working Hours</h3>
                         <p className='text-gray-700 font-light text-sm'>
-                            Monday — Friday, 9:00am — 5:00pm DHA.
+                            Monday to Friday, 9:00am - 5:00pm
                         </p>
                     </div>
                     <div className=' border-t border-gray-200' />
                     <div className='space-y-4 text-sm text-gray-700'>
-                        <div className='flex items-start'>
-                            <Mail className='w-4 h-4 mt-1 mr-2 text-[#00b3c8]' />{' '}
-                            <span>company@gmail.com</span>
+                    <h3 className='text-lg font-semibold mb-2 uppercase'>Office 1</h3>
+                        <div className='flex items-center'>
+                            <Mail className='w-4 h-4 mr-2 text-[#00b3c8]' />{' '}
+                            <span>info@weaetherix.com</span>
                         </div>
-                        <div className='flex items-start'>
-                            <Phone className='w-4 h-4 mt-1 mr-2 text-[#00b3c8]' />{' '}
-                            <span>+880 177 0000000</span>
+                        <div className='flex items-center'>
+                            <Phone className='w-4 h-4 mr-2 text-[#00b3c8]' />{' '}
+                            <span>+880 152 1466101</span>
                         </div>
-                        <div className='flex items-start'>
-                            <MapPin className='w-4 h-4 mt-1 mr-2 text-[#00b3c8]' />{' '}
-                            <span>Miprur DOHS, Dhaka, Bangladesh</span>
+                        <div className='flex items-center'>
+                            <MapPin className='w-4 h-4 mr-2 text-[#00b3c8]' />{' '}
+                            <span>74 E Glenwood Ave Unit #5210, Smyrna, DE 19977</span>
+                        </div>
+                    </div>
+                    <div className=' border-t border-gray-200' />
+                    <div className='space-y-4 text-sm text-gray-700'>
+                    <h3 className='text-lg font-semibold mb-2 uppercase'>Office 2</h3>
+                        <div className='flex items-center'>
+                            <Mail className='w-4 h-4 mr-2 text-[#00b3c8]' />{' '}
+                            <span>info@weaetherix.com</span>
+                        </div>
+                        <div className='flex items-center'>
+                            <Phone className='w-4 h-4 mr-2 text-[#00b3c8]' />{' '}
+                            <span>+880 152 1466101</span>
+                        </div>
+                        <div className='flex items-center'>
+                            <MapPin className='w-4 h-4 mr-2 text-[#00b3c8]' />{' '}
+                            <span>Plot#362, Road#5, Avenue#4, Mirpur DOHS, Dhaka-1216</span>
                         </div>
                     </div>
                     <div className=' border-t border-gray-200' />
@@ -167,7 +183,7 @@ const Contact = () => {
 
             <section className='container pb-10 lg:pb-20'>
                 <iframe
-                    src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.4541797985185!2d90.37280327419266!3d23.83800078540981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c6b4dace62ed%3A0xc742e878029e533b!2sMirpur%20DOHS%20Shopping%20Complex!5e0!3m2!1sen!2sbd!4v1751044076317!5m2!1sen!2sbd'
+                    src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3087.261448587642!2d-75.60938901078718!3d39.30499674860647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c771375d1ae6c5%3A0x2b42722885c0c376!2s74%20E%20Glenwood%20Ave%20%235210%2C%20Smyrna%2C%20DE%2019977%2C%20USA!5e0!3m2!1sen!2sbd!4v1752175112448!5m2!1sen!2sbd'
                     width='100%'
                     height='400'
                     style={{ border: 0 }}

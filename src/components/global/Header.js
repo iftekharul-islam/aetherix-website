@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Navbar from '../navbar/Navbar';
 
 const Header = () => {
@@ -9,7 +8,7 @@ const Header = () => {
         >
             <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
                 <div className='flex justify-between items-center h-16'>
-                    <div className='text-white text-xl font-bold'>Logosipsum</div>
+                    <div className='text-white text-xl font-bold'> Aetherix LTD</div>
                     <nav className='space-x-6 text-white'>
                         <Link href='/' className='hover:text-gray-200'>
                             Home

@@ -3,10 +3,11 @@ import MarqueSection from './MarqueSection';
 
 const Footer = () => {
      const items = [
-        'info@global.com ',
-        '+01 123 456 789',
-        'New York, United States',
-       /*  'info@global.com • +01 123 456 789 • Network, United States' */
+        'Aetherix LTD',
+        'info@weaetherix.com',
+        '+880 152 1466101',
+        'Plot#362, Road#5, Avenue#4, Mirpur DOHS, Dhaka-1216',
+        '74 E Glenwood Ave Unit #5210, Smyrna, DE 19977'
     ];
     return (
         <footer>
@@ -15,13 +16,12 @@ const Footer = () => {
             <div className='bg-[#002a57] text-white text-sm pt-12 pb-6'>
                 <div className='flex justify-between flex-wrap gap-10 container'>
                     <div className='max-w-sm'>
-                        <h4 className='text-xl font-semibold mb-4'>Logosipsum</h4>
+                        <h4 className='text-xl font-semibold mb-4'>Aetherix LTD</h4>
                         <p className='mb-2'>
-                            FPC provides highly specialized facility life cycle integrated
-                            consulting services for the Built Environment.
+                            Plot#362, Road#5, Avenue#4, Mirpur DOHS, Dhaka-1216
                         </p>
-                        <p className='mb-2'>info@global.com</p>
-                        <p className='mb-2'>+01 123 456 789</p>
+                        <p className='mb-2'>info@weaetherix.com</p>
+                        <p className='mb-2'>+880 152 1466101</p>
                         <div className='flex gap-4 mt-4 text-lg'>
                             <i className='fab fa-facebook-f'></i>
                             <i className='fab fa-twitter'></i>
@@ -63,7 +63,7 @@ const Footer = () => {
                 </div>
 
                 <div className='mt-12 border-t border-white/20 pt-4 text-center text-white/70'>
-                    Copyright © 2025, Global Pvt. Ltd
+                    Copyright © 2025, Aetherix LTD
                 </div>
             </div>
         </footer>
